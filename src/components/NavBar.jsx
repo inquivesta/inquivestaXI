@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -19,12 +21,12 @@ function NavBar(){
             {/* Main Nav */}
             <div className="flex items-center justify-between">
                 <div className="text-white text-2xl font-bold"> 
-                    <img src="src/assets/main-design.webp" className="h-16"/>
+                    <Link to="/"><img src="src/assets/main-design.webp" className="h-16"/></Link>
                 </div>
                 <ul className="hidden md:flex space-x-4">
-                    <li><a href="#" className="text-white">Events</a></li>
-                    <li><a href="#" className="text-white">About</a></li>
-                    <li><a href="#" className="text-white">Contact</a></li>
+                    <li><Link to="/event" className="text-white">Events</Link></li>
+                    <li><Link to="/about" className="text-white">About</Link></li>
+                    <li><Link to="/contact" className="text-white">Contact</Link></li>
                 </ul>
 
                 <div className="md:hidden">
@@ -38,9 +40,9 @@ function NavBar(){
             {/* Mob Nav */}
             {isMenuOpen ? (
                 <ul className="grid md:hidden justify-items-center">
-                <li className="py-2"><a href="#" className="text-white">Events</a></li>
-                <li className="py-2"><a href="#" className="text-white">About</a></li>
-                <li className="py-2"><a href="#" className="text-white">Contact</a></li>
+                <li className="py-2"><Link to="/event" className="text-white">Events</Link></li>
+                <li className="py-2"><Link to="/about" className="text-white">About</Link></li>
+                <li className="py-2"><Link to="/contact" className="text-white">Contact</Link></li>
             </ul>
             ) : null}
 
