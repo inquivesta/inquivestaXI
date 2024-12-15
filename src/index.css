@@ -1,13 +1,217 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+}
+.nav-btn {
+  display: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+a {
+  text-decoration: none;
+}
+.glitch {
+  filter: drop-shadow(-1px 0px #00ffff) drop-shadow(1px 0px #ff00ff);
+}
+nav a {
+  color: black;
 }
 
-body{
-    background-color: black;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  background-color: rgba(1,1,1,0.15);
+  backdrop-filter: blur(10px);
+  font-family: 'Bangers';
+  font-size: 1.5rem;;
+  z-index: 99;
+}
+
+.nav-logo {
+  height: 100%;
+  z-index: 100;
+}
+.nav-logo img {
+  height: 80%;
+}
+
+.nav-link {
+  transition: all 200ms ease-in-out;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #a64359;
+  scale: 0;
+  transition: all 300ms ease-in-out;
+  transform-origin: left;
+}
+
+.nav-link:hover {
+  color: #a64359;
+}
+
+.nav-link:hover::after {
+  scale: 1;
+}
+
+/* Hero Section  */
+
+.hero-section {
+  background: url("./bg.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-img {
+  width: 90%;
+  max-width: 50rem;
+  filter: drop-shadow(10px 10px 4px rgba(0,0,0,0.5));
+}
+
+.hero-link {
+  background-color: #a64359;
+  color: white;
+  font-family: 'Bangers';
+  font-size: 1.25rem;
+  padding: 1rem;
+  border-radius: 5px;
+  transform-origin: 50% 50%;
+  transition: all 200ms ease-in-out;
+}
+
+/* .hero-link:hover {
+  scale: 1.05;
+  filter: drop-shadow(5px 5px 4px rgba(0,0,0,0.5));
+  background-color: #f3d8e7;
+  color: black;
+} */
+
+/* About Page */ 
+.scroll-progress {
+  height: 1rem;
+  position: fixed;
+  top:3rem;
+  background-color: red;
+  z-index: 100;
+}
+.about-main-content {
+  width: 100vw;
+  height: 100vh;
+  background:linear-gradient(#A8E0FF, #A2E8F6, #F8EDCC);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.container-1 {
+  background: url("./crowd.webp");
+  width: 100%;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+.about-section {
+  color: white;
+  width: 90%;
+  max-width: 120ch;
+  min-height: 60ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 50px;
+  border: 2px solid #a64359;
+  backdrop-filter: blur(10px);
+  /* filter: drop-shadow(2px 2px 20px white) */
+}
+.about-section h1 {
+  text-align: center;
+  font-family: 'Bangers';
+}
+
+.about-section p {
+  font-family: 'Poppins';
+}
+
+/* Media Queries */
+@media (max-width: 660px) {
+  nav {
+    width: 100vw;
+    height: 2rem;
+  }
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100dvh;
+    backdrop-filter: blur(10px);
+    transition: scale 200ms ease-in-out;
+    transform-origin: 100% 0%;
+  }
+  nav ul[data-visible="false"] {
+    scale: 0;
+  }
+  nav ul[data-visible="true"] {
+    scale: 1;
+  }
+  .nav-btn {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    z-index: 100;
+    background-color: transparent;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 3px solid white;
+    border-radius: 100%;
     color: white;
+  }
+  nav ul {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+  }
+  /* .nav-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    scale: 1;
+  } */
+
+  /* .hero-img {
+    width: 90%;
+  } */
+
 }
