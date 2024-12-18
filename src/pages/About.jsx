@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
         <Navbar/>
-        <div className="about-main-content">
+        <div className="main-content">
             <div className="container-1">
               <motion.div className='about-section'
                 initial = {{scaleX: 0}}
