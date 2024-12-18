@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0turn;
+  inherits: false;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -112,6 +118,19 @@ nav {
   color: black;
 } */
 
+/* Misc */
+.main-content {
+  width: 100vw;
+  min-height: 100vh;
+  background:linear-gradient(#A8E0FF, #A2E8F6, #F8EDCC);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.darkbg {
+  background:linear-gradient(#04293d, #1e2b2e, #2c2a24);
+}
 /* About Page */ 
 .scroll-progress {
   height: 1rem;
@@ -119,14 +138,6 @@ nav {
   top:3rem;
   background-color: red;
   z-index: 100;
-}
-.about-main-content {
-  width: 100vw;
-  height: 100vh;
-  background:linear-gradient(#A8E0FF, #A2E8F6, #F8EDCC);
-  position: relative;
-  display: grid;
-  place-items: center;
 }
 .container-1 {
   background: url("./crowd.webp");
@@ -157,7 +168,67 @@ nav {
 .about-section p {
   font-family: 'Poppins';
 }
+/* Events Page */
+.card {
+	overflow: hidden;
+	position: relative;
+	width: Min(12.5em, 80vmin);
+	aspect-ratio: 1;
+	border-radius: .5em;
+  display: grid;
+  place-items: center;
+	padding: .5em;
+	color: #ededed;
+	text-wrap: balance;
+  z-index: 0;
+  cursor: pointer;
+}
 
+.card::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	inset: -1em;
+	border: solid 1.25em;
+	border-image: 
+		conic-gradient(from var(--angle), #669900, #99cc33, #ccee66, 
+				#006699, #3399cc, #990066, #cc3399, 
+				#ff6600, #ff9900, #ffcc00, #669900) 1;
+	filter: blur(.75em);
+	animation: hue-rotation 4s linear infinite;
+}
+@keyframes hue-rotation {to {--angle: 1turn } }
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+  place-items: center;
+  font-family: 'Poppins';
+}
+.events-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/events-bg-flipped.webp');
+  background-position: 50%;
+  background-color: #442e2e;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+.event-cat {
+  font-family: 'Bangers';
+  width: 100%;
+  text-align: left;
+  color: #ededed;
+}
+.events-wrapper {
+  padding: 3rem;
+  border-radius: 1rem;
+  min-width: 60%;
+}
 /* Media Queries */
 @media (max-width: 660px) {
   nav {
@@ -201,6 +272,15 @@ nav {
     justify-content: space-evenly;
     align-items: center;
     width: 100vw;
+  }
+  .events-cont {
+    padding-top: 2rem;
+  }
+  .event-cat {
+    text-align: center;
+  }
+  .event-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
   /* .nav-logo {
     position: fixed;
