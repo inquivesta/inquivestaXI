@@ -5,7 +5,6 @@ import './index.css'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Events from './pages/Events.jsx'
-import Sponsors from './pages/Sponsors.jsx'
 
 const router = createHashRouter([
   {
@@ -19,10 +18,6 @@ const router = createHashRouter([
   {
     path: "/events",
     element: <Events/>
-  },
-  {
-    path: "/sponsors",
-    element: <Sponsors/>
   }
 ])
 createRoot(document.getElementById('root')).render(
