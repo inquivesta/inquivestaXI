@@ -11,7 +11,7 @@ const Navbar = () => {
     </button>
     <nav >
         <Link className="nav-logo" to='/'>
-            <img src="./logo.png"></img>
+            <img src="/logo.png"></img>
         </Link>
         <ul data-visible={isOpen ? "true" : "false" }>
             <li><Link to="/about" className="nav-link glitch">About</Link></li>
