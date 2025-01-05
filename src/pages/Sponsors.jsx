@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import PastSponsors from "../components/PastSponsors"
+import CurrentSponsors from '../components/CurrentSponsors';
 
 const Sponsors = () => {
     const sponsorsList = [
@@ -23,12 +24,19 @@ const Sponsors = () => {
         { name: 'Lab Instrumentation Partner', logo: "ika.png", size: 'large' },   
         { name: 'Event Sponsor', logo: "red.png", size: 'large' }, 
       ];
+    const currSponsorsList = [
+        { name: 'HDFC Bank', logo: "hdfc.png", size: 'large' },   
+        { name: 'LIC', logo: "lic.svg", size: 'large' },   
+        { name: 'Finlatics', logo: "finlatics.png", size: 'large' },   
+        { name: 'Tusker Tees', logo: "tusker.png", size: 'large' },   
+      ];
   return (
     <>
     <Navbar/>
     <div className="sponsors">
+        <CurrentSponsors sponsors={currSponsorsList}/>
         <PastSponsors sponsors={sponsorsList}/>
-      </div>
+    </div>
     </>
   )
 }
