@@ -373,7 +373,7 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
 
 /* Contact Page */
 .contact-container {
-  background:linear-gradient(to bottom right, #A8E0FF, #A2E8F6, #F8EDCC);
+  /* background:linear-gradient(to bottom right, #A8E0FF, #A2E8F6, #F8EDCC); */
   width: 100vw;
   min-height: 100dvh;
   display: flex;
@@ -401,20 +401,25 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   justify-content: flex-start;
   gap: 1em;
   font-family: "Poppins";
-  color: black;
+  color: whitesmoke;
   width: 100%;
+  transition: all 120ms ease-in-out;
 }
 
-.contact-link a {
+.contact-link:hover {
   text-decoration: none;
-  color: black;
+  cursor: pointer;
+  color: pink !important;
+  transform: translateY(0.25em);
 }
+
 .map {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 3em;
+  gap: 1em;
 }
 iframe {
   max-width: 90%;

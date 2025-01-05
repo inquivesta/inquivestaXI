@@ -5,14 +5,17 @@ const Contact = () => {
   return (
     <>
     <Navbar/>
-    <div className='contact-container'>
+    <div className='contact-container darkbg'>
         <h1 className="glitch">Contact Info</h1>
         <div class="contact-links">
+            <a href="mailto:inquivesta@iiserkol.ac.in" target='_blank' class="contact-link">
+                <i class="fa-solid fa-envelope"></i> <p>inquivesta@iiserkol.ac.in</p>
+            </a>
+            <a href="https://www.instagram.com/inquivesta_iiserk/" target='_blank' class="contact-link">
+                <i class="fa-brands fa-instagram"></i> <p>@inquivesta_iiserk</p>
+            </a>
             <span class="contact-link">
-                <i class="fa-solid fa-envelope"></i> <a href="mailto:inquivesta@iiserkol.ac.in" target="_blank">inquivesta@iiserkol.ac.in</a>
-            </span>
-            <span class="contact-link">
-                <i class="fa-solid fa-phone"></i> <p>+91 81786 88948</p>
+                <i class="fa-solid fa-phone"></i> <p className="hoverable" >+91 81786 88948</p>
             </span>
         </div>
         <div className="map">
