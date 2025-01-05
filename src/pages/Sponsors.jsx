@@ -26,9 +26,9 @@ const Sponsors = () => {
       ];
     const currSponsorsList = [
         { name: 'HDFC Bank', logo: "hdfc.png", size: 'large' },   
+        { name: 'Tusker Tees', logo: "tusker.png", size: 'small' },   
+        { name: 'Finlatics', logo: "finlatics.png", size: 'small' },   
         { name: 'LIC', logo: "lic.svg", size: 'large' },   
-        { name: 'Finlatics', logo: "finlatics.png", size: 'large' },   
-        { name: 'Tusker Tees', logo: "tusker.png", size: 'large' },   
       ];
   return (
     <>

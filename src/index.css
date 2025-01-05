@@ -39,7 +39,7 @@ nav {
   left: 0;
   right: 0;
   height: 3rem;
-  background-color: rgba(1,1,1,0.15);
+  background-color: rgba(259,259,259,0.1);
   backdrop-filter: blur(10px);
   font-family: 'Bangers';
   font-size: 1.5rem;;
@@ -373,7 +373,7 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   background-image:linear-gradient(to bottom left, #2c2a24,#1e2b2e, #04293d);
   /* background-color: black; */
   font-family: Bangers;
-  padding-top: 10vh;
+  padding-top: 15vh;
   flex-direction: column;
 }
 
@@ -386,6 +386,7 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 5vh;
   gap: 1em;
 }
 .contact-container h1 {
