@@ -367,3 +367,55 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   font-family: Bangers;
   padding-top: 10vh;
 }
+
+/* Contact Page */
+.contact-container {
+  background:linear-gradient(to bottom right, #A8E0FF, #A2E8F6, #F8EDCC);
+  width: 100vw;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.contact-container h1 {
+  font-family: "Bangers";
+}
+.contact-links {
+  width: 90%;
+  max-width: 30ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+  font-family: "Poppins";
+  color: black;
+  width: 100%;
+}
+
+.contact-link a {
+  text-decoration: none;
+  color: black;
+}
+.map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3em;
+}
+iframe {
+  max-width: 90%;
+  max-height: 400px;
+  width: 450px;
+  border: 0;
+}

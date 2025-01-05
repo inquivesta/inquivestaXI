@@ -18,7 +18,7 @@ const Navbar = () => {
             <li><Link to="" className="nav-link glitch">Schedule</Link></li>
             <li><Link to="/events" className="nav-link glitch">Events</Link></li>
             <li><Link to="/sponsors" className="nav-link glitch">Sponsors</Link></li>
-            <li><Link to="" className="nav-link glitch">Contact Us</Link></li>
+            <li><Link to="/contact" className="nav-link glitch">Contact Us</Link></li>
         </ul>
     </nav>
     </>
