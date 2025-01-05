@@ -6,7 +6,8 @@ const Events = () => {
     <>
     <Navbar/>
     <div className='main-content darkbg events-cont'>
-        <div className="events-wrapper">
+        <h1 className="event-cat glitch" style={{textAlign: 'center'}}> To be announced soon !!</h1>
+        {/* <div className="events-wrapper">
             <h1 className='event-cat glitch'>Popular Events</h1>
             <div className="event-grid">
                 <div className="card">
@@ -39,7 +40,7 @@ const Events = () => {
                     Sample Event
                 </div>
             </div>
-        </div>
+        </div> */}
     </div>
     </>
   )
