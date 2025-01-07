@@ -216,7 +216,7 @@ nav {
 
 .event-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1em;
   place-items: center;
   font-family: 'Poppins';
@@ -420,6 +420,7 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   justify-content: center;
   align-items: center;
   gap: 1em;
+  padding-top: 7rem;
 }
 .contact-container h1 {
   font-family: "Bangers";
