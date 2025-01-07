@@ -6,7 +6,7 @@ import { motion } from 'motion/react'
 const Home = () => {
   return (
     <>
-    <Navbar/>
+    <Navbar active=""/>
     <div className="hero-section">
       <img src="./logo.png" alt="" className="hero-img" />
       <h3 className='glitch'>7th to 9th February, 2025</h3>
