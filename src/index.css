@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @property --angle {
   syntax: "<angle>";
@@ -78,6 +77,10 @@ nav {
 
 .nav-link:hover::after {
   scale: 1;
+}
+
+.active {
+  color: #a64359;
 }
 
 /* Hero Section  */
@@ -180,24 +183,28 @@ nav {
 .card {
 	overflow: hidden;
 	position: relative;
-	width: Min(12.5em, 80vmin);
+	width: Min(12.5rem, 80vmin);
 	aspect-ratio: 1;
-	border-radius: .5em;
+	border-radius: .5rem;
   display: grid;
   place-items: center;
-	padding: .5em;
+	padding: .5rem;
 	color: #ededed;
 	text-wrap: balance;
   z-index: 0;
   cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.75ch;
+  font-weight: 700;
+  text-align: center;
 }
 
 .card::before {
 	content: '';
 	position: absolute;
 	z-index: -1;
-	inset: -1em;
-	border: solid 1.25em;
+	inset: -1rem;
+	border: solid 1.25rem;
 	border-image: 
 		conic-gradient(from var(--angle), #669900, #99cc33, #ccee66, 
 				#006699, #3399cc, #990066, #cc3399, 
@@ -213,29 +220,47 @@ nav {
   gap: 1em;
   place-items: center;
   font-family: 'Poppins';
+  width: 100%;
 }
 .events-cont {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  gap: 2em;
+}
+.events-cont::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url('/events-bg-flipped.webp');
   background-position: 50%;
-  background-color: #442e2e;
+  background-color: #c48686;
   background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
+  /* background-blend-mode: multiply; */
 }
 .event-cat {
   font-family: 'Bangers';
   width: 100%;
   text-align: left;
-  color: #ededed;
+  font-size: 5ch;
+  font-weight: 900;
+  /* color: #ededed; */
 }
 .events-wrapper {
   padding: 3rem;
   border-radius: 1rem;
   min-width: 60%;
+  display: grid;
+  place-items: center;
+  gap: 1em;
+  backdrop-filter: blur(10px);
 }
 /* Media Queries */
 @media (max-width: 660px) {
@@ -249,6 +274,7 @@ nav {
     right: 0;
     left: 0;
     height: 100dvh;
+    background-color: rgba(259,259,259,0.7);
     backdrop-filter: blur(10px);
     transition: scale 200ms ease-in-out;
     transform-origin: 100% 0%;
@@ -280,9 +306,6 @@ nav {
     color: white;
   }
 
-  .events-cont {
-    padding-top: 2rem;
-  }
   .event-cat {
     text-align: center;
   }
@@ -299,6 +322,7 @@ nav {
 
   .contact-container {
     padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   .about-section {
     min-height: fit-content;
@@ -383,18 +407,23 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
 
 /* Contact Page */
 .contact-container {
+  /* background:linear-gradient(#3fbbfd, #5be1fc, #face48); */
+  /* background-image: linear-gradient(to bottom right, #091647, #2a042b); */
   /* background:linear-gradient(to bottom right, #A8E0FF, #A2E8F6, #F8EDCC); */
+  background-image: url('/contact-bg.jpg');
+  background-position: 50%;
+  background-size: cover;
   width: 100vw;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 5vh;
   gap: 1em;
 }
 .contact-container h1 {
   font-family: "Bangers";
+  color: #ca711a;
 }
 .contact-links {
   width: 90%;
@@ -404,6 +433,7 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   gap: 1em;
   justify-content: center;
   align-items: center;
+  /* backdrop-filter: blur(10px); */
 }
 
 .contact-link {
@@ -412,7 +442,7 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   justify-content: flex-start;
   gap: 1em;
   font-family: "Poppins";
-  color: whitesmoke;
+  color: black;
   width: 100%;
   transition: all 120ms ease-in-out;
 }
@@ -420,7 +450,7 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
 .contact-link:hover {
   text-decoration: none;
   cursor: pointer;
-  color: pink !important;
+  color: #ca711a !important;
   transform: translateY(0.25em);
 }
 

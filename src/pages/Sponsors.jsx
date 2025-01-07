@@ -26,13 +26,15 @@ const Sponsors = () => {
       ];
     const currSponsorsList = [
         { name: 'HDFC Bank', logo: "hdfc.png", size: 'large' },   
-        { name: 'Tusker Tees', logo: "tusker.png", size: 'small' },   
+        { name: 'Merchandise Partner', logo: "tusker.png", size: 'small' },   
         { name: 'Finlatics', logo: "finlatics.png", size: 'small' },   
         { name: 'LIC', logo: "lic.svg", size: 'large' },   
+        {name: 'DKMS BMST', logo: "dkms.png", size: 'large'},
+        {name: 'DSS', logo: "dss.png", size: 'large'},
       ];
   return (
     <>
-    <Navbar/>
+    <Navbar active="sponsors"/>
     <div className="sponsors">
         <CurrentSponsors sponsors={currSponsorsList}/>
         <PastSponsors sponsors={sponsorsList}/>
