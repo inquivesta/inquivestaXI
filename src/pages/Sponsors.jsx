@@ -32,7 +32,7 @@ const Sponsors = () => {
       ];
   return (
     <>
-    <Navbar/>
+    <Navbar active="sponsors"/>
     <div className="sponsors">
         <CurrentSponsors sponsors={currSponsorsList}/>
         <PastSponsors sponsors={sponsorsList}/>

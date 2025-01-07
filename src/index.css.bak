@@ -275,7 +275,7 @@ nav {
     left: 0;
     height: 100dvh;
     background-color: rgba(259,259,259,0.7);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     transition: scale 200ms ease-in-out;
     transform-origin: 100% 0%;
     flex-direction: column;

@@ -4,8 +4,8 @@ import Navbar from '../components/Navbar'
 const Contact = () => {
   return (
     <>
-    <Navbar/>
-    <div className='contact-container darkbg'>
+    <Navbar active="contact"/>
+    <div className='contact-container'>
         <h1 className="glitch">Contact Info</h1>
         <div class="contact-links">
             <a href="mailto:inquivesta@iiserkol.ac.in" target='_blank' class="contact-link">
