@@ -5,7 +5,7 @@ import { motion} from "motion/react"
 const About = () => {
   return (
     <>
-        <Navbar/>
+        <Navbar active="about"/>
         <div className="main-content">
             {/* <div className="container-1">
               <motion.div className='about-section'
