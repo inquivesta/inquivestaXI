@@ -249,24 +249,14 @@ nav {
     right: 0;
     left: 0;
     height: 100dvh;
-    /* backdrop-filter: blur(10px); */
+    background-color: rgba(259,259,259,0.5);
+    backdrop-filter: blur(10px);
     transition: scale 200ms ease-in-out;
     transform-origin: 100% 0%;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     width: 100vw;
-  }
-  nav ul::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(259,259,259,0.1);
-    backdrop-filter: blur(10px);
-    z-index: 0;
   }
   nav ul[data-visible="false"] {
     scale: 0;
