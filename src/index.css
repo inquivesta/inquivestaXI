@@ -249,7 +249,7 @@ nav {
     right: 0;
     left: 0;
     height: 100dvh;
-    background-color: rgba(259,259,259,0.5);
+    background-color: rgba(259,259,259,0.6);
     backdrop-filter: blur(10px);
     transition: scale 200ms ease-in-out;
     transform-origin: 100% 0%;
