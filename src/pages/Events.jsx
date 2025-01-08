@@ -10,14 +10,18 @@ const Events = () => {
         {name: "Anicon 3.0", link: "https://anicon3.github.io"},
         {name: "LOST", link: ""},
         {name: "MUN'dane", link: ""},
+        {name: "GNQ", link: ""},
+        {name: "Recycled Runway", link: ""},
     ];
     const dramatics = [
-        {name: "mime competition", link: ""},
+        {name: "monodrama", link: ""},
     ];
     const science = [
         {name: "Art in a culture", link: ""},
         {name: "Bad Ad Hoc Hypothesis", link: ""},
         {name: "Mind-Meld", link: ""},
+        {name: "Thrust", link: ""},
+        {name: "Beat the drop", link: ""},
     ];
     const music = [
         {name: "battle of bands", link: ""},
