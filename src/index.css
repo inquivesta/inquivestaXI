@@ -134,6 +134,8 @@ nav {
   min-height: 100vh;
   background:linear-gradient(#A8E0FF, #A2E8F6, #F8EDCC);
   background-image: url('/crowd.webp');
+  background-position: 50%;
+  background-size: cover;
   position: relative;
   display: grid;
   place-items: center;
@@ -153,9 +155,10 @@ nav {
 .container-1 {
   /* background: url("./crowd.webp"); */
   width: 100%;
-  height: 100dvh;
+  /* min-height: 100dvh; */
   display: grid;
   place-items: center;
+  padding-top: 7rem;
 }
 .about-section {
   color: white;
@@ -197,6 +200,8 @@ nav {
   font-size: 1.75ch;
   font-weight: 700;
   text-align: center;
+  outline: 2px solid #ededed;
+  transition: outline 250ms ease-in-out, color 250ms ease-in-out;
 }
 
 .card::before {
@@ -211,6 +216,15 @@ nav {
 				#ff6600, #ff9900, #ffcc00, #669900) 1;
 	filter: blur(.75em);
 	animation: hue-rotation 4s linear infinite;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+.card:hover {
+  outline: none;
+  color: #cdf60a;
+}
+.card:hover::before {
+  opacity: 1;
 }
 @keyframes hue-rotation {to {--angle: 1turn } }
 
@@ -248,7 +262,7 @@ nav {
 .event-cat {
   font-family: 'Bangers';
   width: 100%;
-  text-align: left;
+  text-align: center;
   font-size: 5ch;
   font-weight: 900;
   /* color: #ededed; */
@@ -301,9 +315,9 @@ nav {
     border: none;
     width: 2.5rem;
     height: 2.5rem;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 100%;
-    color: white;
+    color: black;
   }
 
   .event-cat {
@@ -410,17 +424,27 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   /* background:linear-gradient(#3fbbfd, #5be1fc, #face48); */
   /* background-image: linear-gradient(to bottom right, #091647, #2a042b); */
   /* background:linear-gradient(to bottom right, #A8E0FF, #A2E8F6, #F8EDCC); */
-  background-image: url('/contact-bg.jpg');
-  background-position: 50%;
-  background-size: cover;
   width: 100vw;
-  min-height: 100dvh;
+  /* min-height: 100dvh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
   padding-top: 7rem;
+  padding-bottom: 5rem;
+}
+.contact-container::before {
+  content: '';
+  background-image: url('/contact-bg.jpg');
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100dvh;
+  background-position: 50%;
+  background-size: cover;
 }
 .contact-container h1 {
   font-family: "Bangers";
