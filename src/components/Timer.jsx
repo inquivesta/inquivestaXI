@@ -1,4 +1,5 @@
 import { React, useState, useRef, useEffect} from 'react'
+import { motion } from 'motion/react';
 
 
 const Timer = () => {
@@ -42,7 +43,11 @@ const Timer = () => {
   
   
     return ( 
-        <div class="timer">
+        <motion.div class="timer"
+        initial={{scale: 0}}
+        whileInView={{scale: 1}}
+        viewport={{once: true}}
+        >
             <span className="time day">{timerDays < 10 ? '0'+timerDays : timerDays}</span>
             <span className="time-sep">:</span>
             <span className="time hour">{timerHours < 10 ? '0'+timerHours : timerHours}</span>
@@ -50,7 +55,7 @@ const Timer = () => {
             <span className="time minute">{timerMinutes < 10 ? '0'+timerMinutes : timerMinutes}</span>
             <span className="time-sep">:</span>
             <span className="time second">{timerSeconds < 10 ? '0'+timerSeconds : timerSeconds}</span>
-        </div>
+        </motion.div>
   )
 }
 
