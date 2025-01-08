@@ -14,9 +14,9 @@ const Contact = () => {
             <a href="https://www.instagram.com/inquivesta_iiserk/" target='_blank' class="contact-link">
                 <i class="fa-brands fa-instagram"></i> <p>@inquivesta_iiserk</p>
             </a>
-            <span class="contact-link">
+            <a class="contact-link" href="tel:+91 81786 88948">
                 <i class="fa-solid fa-phone"></i> <p className="hoverable" >+91 81786 88948</p>
-            </span>
+            </a>
         </div>
         <div className="map">
             <h1 className="glitch">How to reach us? </h1>
