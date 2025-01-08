@@ -483,7 +483,15 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   padding-top: 15vh;
   flex-direction: column;
 }
-
+/* Schedule */
+.schedule-container {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  font-family: 'Bangers', serif;
+  color: black;
+  background:linear-gradient(to bottom, #A8E0FF, #A2E8F6, #F8EDCC);
+}
 /* Contact Page */
 .contact-container {
   /* background:linear-gradient(#3fbbfd, #5be1fc, #face48); */

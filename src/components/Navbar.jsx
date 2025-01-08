@@ -15,7 +15,7 @@ const Navbar = ({active}) => {
         </Link>
         <ul data-visible={isOpen ? "true" : "false" }>
             <li><Link to="/about" className={`nav-link glitch ${active == "about" ? "active" : ""}`}>About</Link></li>
-            <li><Link to="" className={`nav-link glitch ${active === "schedule" ? "active" : ""}`}>Schedule</Link></li>
+            <li><Link to="/schedule" className={`nav-link glitch ${active === "schedule" ? "active" : ""}`}>Schedule</Link></li>
             <li><Link to="/events" className={`nav-link glitch ${active == "events" ? "active" : ""}`}>Events</Link></li>
             <li><Link to="/sponsors" className={`nav-link glitch ${active == "sponsors" ? "active" : ""}`}>Sponsors</Link></li>
             <li><Link to="/contact" className={`nav-link glitch ${active == "contact" ? "active" : ""}`}>Contact Us</Link></li>
