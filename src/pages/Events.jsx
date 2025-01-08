@@ -12,6 +12,7 @@ const Events = () => {
         {name: "MUN'dane", link: ""},
         {name: "GNQ", link: ""},
         {name: "Recycled Runway", link: ""},
+        {name: "Photon", link: ""},
     ];
     const dramatics = [
         {name: "monodrama", link: ""},
