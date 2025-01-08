@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 
 @property --angle {
   syntax: "<angle>";
@@ -9,6 +10,9 @@
 * {
   margin: 0;
   padding: 0;
+}
+html {
+  overflow-x: hidden;
 }
 .nav-btn {
   display: none;
@@ -127,6 +131,61 @@ nav {
   background-color: #f3d8e7;
   color: black;
 } */
+.timer-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.timer {
+  width: 90%;
+  max-width: 30rem;
+  font-size: 4ch;
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr 1fr 4fr 1fr 4fr;
+  /* gap: 0.25rem; */
+  font-family: "Knewave", serif;
+  padding: calc(3rem + 1.25ch) 1rem 3rem 1rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.time {
+  text-align: center;
+  position: relative;
+}
+
+.time::before {
+  position: absolute;
+  left: 0;
+  top: -1.25em;
+  right: 0;
+  font-size: 1ch;
+  font-family: "Bangers", serif;
+  color: black;
+}
+.day::before {
+  content: 'Days';
+}
+
+.hour::before {
+  content: 'Hours';
+}
+
+.minute::before {
+  content: 'Minutes';
+}
+
+.second::before {
+  content: 'Seconds';
+}
+
+.time-sep {
+  text-align: center;
+}
 
 /* Misc */
 .main-content {
@@ -134,6 +193,8 @@ nav {
   min-height: 100vh;
   background:linear-gradient(#A8E0FF, #A2E8F6, #F8EDCC);
   background-image: url('/crowd.webp');
+  background-position: 50%;
+  background-size: cover;
   position: relative;
   display: grid;
   place-items: center;
@@ -153,9 +214,10 @@ nav {
 .container-1 {
   /* background: url("./crowd.webp"); */
   width: 100%;
-  height: 100dvh;
+  /* min-height: 100dvh; */
   display: grid;
   place-items: center;
+  padding-top: 7rem;
 }
 .about-section {
   color: white;
@@ -197,6 +259,8 @@ nav {
   font-size: 1.75ch;
   font-weight: 700;
   text-align: center;
+  outline: 2px solid #ededed;
+  transition: outline 250ms ease-in-out, color 250ms ease-in-out;
 }
 
 .card::before {
@@ -211,6 +275,15 @@ nav {
 				#ff6600, #ff9900, #ffcc00, #669900) 1;
 	filter: blur(.75em);
 	animation: hue-rotation 4s linear infinite;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+.card:hover {
+  outline: none;
+  color: #cdf60a;
+}
+.card:hover::before {
+  opacity: 1;
 }
 @keyframes hue-rotation {to {--angle: 1turn } }
 
@@ -248,7 +321,7 @@ nav {
 .event-cat {
   font-family: 'Bangers';
   width: 100%;
-  text-align: left;
+  text-align: center;
   font-size: 5ch;
   font-weight: 900;
   /* color: #ededed; */
@@ -260,6 +333,7 @@ nav {
   display: grid;
   place-items: center;
   gap: 1em;
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 }
 /* Media Queries */
@@ -301,9 +375,9 @@ nav {
     border: none;
     width: 2.5rem;
     height: 2.5rem;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 100%;
-    color: white;
+    color: black;
   }
 
   .event-cat {
@@ -410,17 +484,27 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   /* background:linear-gradient(#3fbbfd, #5be1fc, #face48); */
   /* background-image: linear-gradient(to bottom right, #091647, #2a042b); */
   /* background:linear-gradient(to bottom right, #A8E0FF, #A2E8F6, #F8EDCC); */
-  background-image: url('/contact-bg.jpg');
-  background-position: 50%;
-  background-size: cover;
   width: 100vw;
-  min-height: 100dvh;
+  /* min-height: 100dvh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
   padding-top: 7rem;
+  padding-bottom: 5rem;
+}
+.contact-container::before {
+  content: '';
+  background-image: url('/contact-bg.jpg');
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100dvh;
+  background-position: 50%;
+  background-size: cover;
 }
 .contact-container h1 {
   font-family: "Bangers";
