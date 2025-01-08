@@ -1,6 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import EventCard from '../components/EventCard';
+import { motion } from 'motion/react';
+import EventsWrapper from '../components/EventsWrapper';
 
 const Events = () => {
     const core = [
@@ -37,46 +39,11 @@ const Events = () => {
     <>
     <Navbar active="events"/>
     <div className='main-content darkbg events-cont'>
-        <div className="events-wrapper">
-            <h1 className='event-cat glitch'>Core</h1>
-            <div className="event-grid">
-                {core.map((e) => (
-                    <EventCard eventProp={e}/>
-                ))}
-            </div>
-        </div>
-        <div className="events-wrapper">
-            <h1 className='event-cat glitch'>Science</h1>
-            <div className="event-grid">
-                {science.map((e) => (
-                    <EventCard eventProp={e}/>
-                ))}
-            </div>
-        </div>
-        <div className="events-wrapper">
-            <h1 className='event-cat glitch'>Music</h1>
-            <div className="event-grid">
-                {music.map((e) => (
-                    <EventCard eventProp={e}/>
-                ))}
-            </div>
-        </div>
-        <div className="events-wrapper">
-            <h1 className='event-cat glitch'>Dramatics</h1>
-            <div className="event-grid">
-                {dramatics.map((e) => (
-                    <EventCard eventProp={e}/>
-                ))}
-            </div>
-        </div>
-        <div className="events-wrapper">
-            <h1 className='event-cat glitch'>Sports</h1>
-            <div className="event-grid">
-                {sports.map((e) => (
-                    <EventCard eventProp={e}/>
-                ))}
-            </div>
-        </div>
+        <EventsWrapper eventsArray={core} category="Core"/>
+        <EventsWrapper eventsArray={science} category="Science"/>
+        <EventsWrapper eventsArray={music} category="Music"/>
+        <EventsWrapper eventsArray={dramatics} category="Dramatics"/>
+        <EventsWrapper eventsArray={sports} category="Sports"/>
     </div>
     </>
   )
