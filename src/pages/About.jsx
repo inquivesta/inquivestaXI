@@ -7,16 +7,6 @@ const About = () => {
     <>
         <Navbar active="about"/>
         <div className="main-content">
-            {/* <div className="container-1">
-              <motion.div className='about-section'
-                initial = {{scaleX: 0}}
-                whileInView= {{scaleX: 1}}
-              >
-                  <h1>How It all Started</h1>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, tenetur iste quibusdam impedit aperiam, debitis minima, eligendi nihil illo explicabo rerum? Dolorem perspiciatis doloremque voluptate laborum pariatur aliquam saepe consequuntur quasi libero. Enim maiores, sed totam dignissimos aspernatur repudiandae fugit molestias harum repellendus, odit dolore omnis sint perferendis modi consectetur earum? Voluptatem sed hic, obcaecati numquam vel, inventore odit libero nemo qui, fugit velit. Provident, architecto quasi? Enim delectus ut consequatur quae quis recusandae reiciendis dicta id, ipsum optio assumenda omnis veniam doloremque incidunt modi minima aut, reprehenderit nostrum. Sapiente culpa soluta consectetur aspernatur, debitis autem fugiat perferendis veritatis quae.</p>
-
-              </motion.div>
-            </div> */}
             <div className="container-1">
               <motion.div className='about-section' 
                 initial = {{scaleY: 0}}
