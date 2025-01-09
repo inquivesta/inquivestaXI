@@ -557,7 +557,7 @@ nav {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   color: white;
-  width: 100%;
+  max-width: 100%;
   padding: 10px;
   text-align: center;
   opacity: 0;           /* Hidden by default */
