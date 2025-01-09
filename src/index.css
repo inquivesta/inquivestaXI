@@ -557,12 +557,15 @@ nav {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   color: white;
-  max-width: 100%;
+  width: 100%;
   padding: 10px;
   text-align: center;
   opacity: 0;           /* Hidden by default */
 transform: translateY(100%);  /* Position below the tile */
 transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
+}
+.sponsor-info h3 {
+  width: 90%;
 }
 .sponsor-tile:hover .sponsor-info {
   opacity: 1;           /* Make text visible */
