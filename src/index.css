@@ -564,6 +564,9 @@ nav {
 transform: translateY(100%);  /* Position below the tile */
 transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
 }
+.sponsor-info h3 {
+  width: 90%;
+}
 .sponsor-tile:hover .sponsor-info {
   opacity: 1;           /* Make text visible */
   transform: translateY(0);  /* Slide up into view */
