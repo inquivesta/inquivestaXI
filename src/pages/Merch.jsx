@@ -3,14 +3,14 @@ import Navbar from '../components/Navbar.jsx'
 import MerchImages from '../components/MerchImages.jsx';
 
 const Merch = () => {
+    const buyLink = "https://unstop.com/o/pH8mLrO?lb=Otz3Q9l&utm_medium=Share&utm_source=shortUrl";
     const merch = [
-        {title: "Butterfly Hoodie", images: ["default-front.png", "default-back.png", "default-design.png"]},
-        {title: "Butterfly Hoodie", images: ["default-front.png", "default-back.png", "default-design.png"]},
-        {title: "Butterfly Hoodie", images: ["default-front.png", "default-back.png", "default-design.png"]},
-        {title: "Butterfly Hoodie", images: ["default-front.png", "default-back.png", "default-design.png"]},
-        {title: "Butterfly Hoodie", images: ["default-front.png", "default-back.png", "default-design.png"]},
+        {title: "Hoodie (Butterfly)", images: ["2.png", "1.png"], link: buyLink},
+        {title: "Hoodie (Gravity)", images: ["4.png", "3.png"], link: buyLink},
+        {title: "Roundneck Tee (Schrodinger's Cat)", images: ["6.png", "5.png"], link: buyLink},
+        {title: "Roundneck Tee (Newton's Rings)", images: ["7.png", "8.png"], link: buyLink},
     ];
-    const showMerch = false;
+    const showMerch = true;
   return (
     <>
         <Navbar active="merch"/>
