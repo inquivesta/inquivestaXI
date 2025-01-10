@@ -9,6 +9,7 @@ import Sponsors from './pages/Sponsors.jsx'
 import Contact from './pages/Contact.jsx'
 import Schedule from './pages/Schedule.jsx'
 import Team from './pages/Team.jsx'
+import Merch from './pages/Merch.jsx'
 
 const router = createHashRouter([
   {
@@ -38,6 +39,10 @@ const router = createHashRouter([
   {
     path: "/team",
     element: <Team/>
+  },
+  {
+    path: "/merch",
+    element: <Merch/>
   }
 ])
 createRoot(document.getElementById('root')).render(
