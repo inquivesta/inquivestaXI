@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar.jsx'
 import MerchImages from '../components/MerchImages.jsx';
 
 const Merch = () => {
-    const buyLink = "https://unstop.com/o/pH8mLrO?lb=Otz3Q9l&utm_medium=Share&utm_source=shortUrl";
+    const buyLink = "https://forms.gle/SVzAFLAte8Xn1sVb6";
     const merch = [
         {title: "Hoodie (Butterfly) [Rs 849]", images: ["2.png", "1.png"], link: buyLink},
         {title: "Hoodie (Gravity) [Rs 849]", images: ["4.png", "3.png"], link: buyLink},
