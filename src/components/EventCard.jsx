@@ -24,18 +24,34 @@ const EventCard = ({eventProp}) => {
 
   return (
     <>
-    <a href={eventProp.link == "" ? "/#/events" : eventProp.link} className="card" onClick={togglePopup}>
+    <div href={eventProp.link == "" ? "/#/events" : eventProp.link} className="card" onClick={togglePopup}>
         { eventProp.name }
-    </a>
+    </div>
 
     {isOpen && (
       <div className="popup-overlay">
         <div className="popup-content">
           <h2> { eventProp.name } </h2>
-          <p>Text goes here</p>
+          <p>{eventProp.details ? eventProp.details : "Details to be Added"}</p>
+          <span className='popup-buttons'>
+          { 
+            eventProp.link ?
+            <a className="close-popup-btn" href={eventProp.link} target='_blank'>
+              Website
+            </a>
+            : ""
+          }
+          {
+            eventProp.register ?
+            <a className="close-popup-btn" href={eventProp.register} target='_blank'>
+              Register
+            </a>
+            : ""
+          }
           <button className="close-popup-btn" onClick={togglePopup}>
             Close
           </button>
+          </span>
         </div>
       </div>
     )}
