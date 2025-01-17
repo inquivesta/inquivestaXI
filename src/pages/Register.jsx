@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from '../configuration';
 import { onValue, ref, set, update } from 'firebase/database';
 import Form from "../components/Form";
+import Navbar from "../components/Navbar";
 
 // useEffect(() => {
 //   function getURL() {
@@ -48,37 +49,46 @@ const Register = () => {
       });
   }
 
-  const eventForms = [
-    [
-      <input type="text" name="name" placeholder="Name"></input>,
-      <input type="password" name="pass" placeholder="Pass"></input>
-    ]
-  ]
+  const eventForms = {
+    mundane: ["name", "email", "phone", "institute", "firstCommitteePref", "secondCommitteePref", "thirdCommitteePref"], 
+  };
+
   const logFormData = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
     const holder = new Object();
     for (const [name, val] of data) {
       
-      holder[name] = val;
+      if (eventForms[eventName].includes(name)) {
+        if (val.trim() === "") return
+        holder[name] = val;
+      }
       // {
       //   name, ":", val
       // }
       // console.log(name, ":", val);
-      console.log(holder);
     }
+    // console.log(holder);
     writeData(holder);
+    // console.log(eventName);
 
   };
-  return (
-    <div> 
-      { eventName }
-      <form method="POST" onSubmit={(e) => {logFormData(e)}}>
-        <Form eventForm={eventForms[0]}/>
-        <input type="submit" label="Less Fuking Go"></input>
-      </form>
-    </div>
-  )
+  if (eventForms[eventName]){
+    return (
+      <>
+      <Navbar />
+      <div className="form-container"> 
+        <h1 className="form-title"> Register for { eventName }</h1>
+        <form method="POST" onSubmit={(e) => {logFormData(e)}} className="regform">
+          <Form eventForm={eventForms[eventName]}/>
+          <input type="submit" className="submit-btn merch-btn" value="Proceed"/>
+        </form>
+      </div>
+      </>
+    )
+  } else {
+    return(<h1>Wrong Place BRAH!</h1>);
+  }
 }
 
 export default Register
