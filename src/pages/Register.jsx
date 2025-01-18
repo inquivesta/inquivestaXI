@@ -3,6 +3,7 @@ import { db } from '../configuration';
 import { onValue, ref, set, update } from 'firebase/database';
 import Form from "../components/Form";
 import Navbar from "../components/Navbar";
+import eventForms from "../data/eventData.jsx"
 
 // useEffect(() => {
 //   function getURL() {
@@ -21,6 +22,7 @@ const Register = () => {
     const eventKey = url[url.length - 1]
     setEventName(eventKey)
     console.log(eventKey)
+    console.log(eventForms["mundane"])
 
   }, []);
 
@@ -49,28 +51,21 @@ const Register = () => {
       });
   }
 
-  const eventForms = {
-    mundane: ["name", "email", "phone", "institute", "firstCommitteePref", "secondCommitteePref", "thirdCommitteePref"], 
-  };
+  
 
   const logFormData = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
     const holder = new Object();
     for (const [name, val] of data) {
-      
-      if (eventForms[eventName].includes(name)) {
+      const formFields = eventForms[eventName].map((e) => (e.name ? e.name : e));
+
+      if (formFields.includes(name)) {
         if (val.trim() === "") return
         holder[name] = val;
       }
-      // {
-      //   name, ":", val
-      // }
-      // console.log(name, ":", val);
     }
-    // console.log(holder);
     writeData(holder);
-    // console.log(eventName);
 
   };
   if (eventForms[eventName]){
