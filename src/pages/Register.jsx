@@ -33,7 +33,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/register/", {
+      const response = await fetch(import.meta.env.VITE_BACKEND, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const Register = () => {
 
       const data = await response.json();
       alert(data["message"]);
-      // navigate("/events");
+      navigate("/events");
     } catch (error) {
       console.error("Error posting data:", error);
     }
