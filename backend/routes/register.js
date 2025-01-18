@@ -5,17 +5,18 @@ const { database } = require("../firebaseConfig");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  try {
-    const dbRef = ref(database, "key1");
-    const snapshot = await get(dbRef);
-    if (snapshot.exists()) {
-      res.status(200).json(snapshot.val());
-    } else {
-      res.status(404).json({ message: "No data found" });
-    }
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
+  // try {
+  //   const dbRef = ref(database, "key1");
+  //   const snapshot = await get(dbRef);
+  //   if (snapshot.exists()) {
+  //     res.status(200).json(snapshot.val());
+  //   } else {
+  //     res.status(404).json({ message: "No data found" });
+  //   }
+  // } catch (error) {
+  //   res.status(500).json({ error: error.message });
+  // }
+  res.send("Nice try Diddy...");
 });
 
 router.post("/", async (req, res) => {
