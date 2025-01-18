@@ -1,89 +1,78 @@
 import React, { useEffect, useState } from "react";
-import { db } from '../configuration';
-import { onValue, ref, set, update } from 'firebase/database';
-import Form from "../components/Form";
-import Navbar from "../components/Navbar";
-import eventForms from "../data/eventData.jsx"
-
-// useEffect(() => {
-//   function getURL() {
-//     const url = window.location.href.split("/")[-1]
-//     console.log(url)
-//   }  
-// }, []);
+import { useNavigate } from "react-router-dom";
+import Form from "../components/Form.jsx";
+import Navbar from "../components/Navbar.jsx";
+import eventForms from "../data/eventData.jsx";
 
 const Register = () => {
   const [eventName, setEventName] = useState("");
-
+  const navigate = useNavigate();
 
   useEffect(() => {
-    
-    const url = window.location.href.split("/")
-    const eventKey = url[url.length - 1]
-    setEventName(eventKey)
-    console.log(eventKey)
-    console.log(eventForms["mundane"])
-
+    const url = window.location.href.split("/");
+    const eventKey = url[url.length - 1];
+    setEventName(eventKey);
   }, []);
 
-  function writeData(H) {
-    const countRef = ref(db, `/events/${eventName}/count`);
-    var i = 0;
-
-    onValue(countRef, (snapshot) => {
-          const value = snapshot.val();
-          i = value ? Number(value.number) + 1 : 0;
-        });
-    const dbRef = ref(db, `/events/${eventName}/entry-${i}`); // Replace "your-node" with your database path
-    set(dbRef, H)
-      .then(() => {
-        console.log("Data written successfully!");
-      })
-      .catch((error) => {
-        console.error("Error writing data:", error);
-      });
-    set(countRef, {number: i})
-      .then(() => {
-        console.log("Data written successfully!");
-      })
-      .catch((error) => {
-        console.error("Error writing data:", error);
-      });
-  }
-
-  
-
-  const logFormData = (e) => {
+  const logFormData = async (e) => {
     e.preventDefault();
+
     const data = new FormData(e.target);
     const holder = new Object();
+
+    holder["event"] = eventName;
     for (const [name, val] of data) {
-      const formFields = eventForms[eventName].map((e) => (e.name ? e.name : e));
+      const formFields = eventForms[eventName].map((e) =>
+        e.name ? e.name : e
+      );
 
       if (formFields.includes(name)) {
-        if (val.trim() === "") return
+        if (val.trim() === "") return;
         holder[name] = val;
       }
     }
-    writeData(holder);
 
+    try {
+      const response = await fetch(import.meta.env.VITE_BACKEND, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(holder), // Send data as JSON
+      });
+
+      const data = await response.json();
+      alert(data["message"]);
+      navigate("/events");
+    } catch (error) {
+      console.error("Error posting data:", error);
+    }
   };
-  if (eventForms[eventName]){
+  if (eventForms[eventName]) {
     return (
       <>
-      <Navbar />
-      <div className="form-container"> 
-        <h1 className="form-title"> Register for { eventName }</h1>
-        <form method="POST" onSubmit={(e) => {logFormData(e)}} className="regform">
-          <Form eventForm={eventForms[eventName]}/>
-          <input type="submit" className="submit-btn merch-btn" value="Proceed"/>
-        </form>
-      </div>
+        <Navbar />
+        <div className="form-container">
+          <h1 className="form-title"> Register for {eventName}</h1>
+          <form
+            onSubmit={(e) => {
+              logFormData(e);
+            }}
+            className="regform"
+          >
+            <Form eventForm={eventForms[eventName]} />
+            <input
+              type="submit"
+              className="submit-btn merch-btn"
+              value="Proceed"
+            />
+          </form>
+        </div>
       </>
-    )
+    );
   } else {
-    return(<h1>Wrong Place BRAH!</h1>);
+    return <h1>Wrong Place BRAH!</h1>;
   }
-}
+};
 
-export default Register
+export default Register;
