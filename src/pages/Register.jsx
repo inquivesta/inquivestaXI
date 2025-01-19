@@ -54,19 +54,23 @@ const Register = () => {
         <Navbar />
         <div className="form-container">
           <h1 className="form-title"> Register for {eventName}</h1>
-          <form
-            onSubmit={(e) => {
-              logFormData(e);
-            }}
-            className="regform"
-          >
-            <Form eventForm={eventForms[eventName]} />
-            <input
-              type="submit"
-              className="submit-btn merch-btn"
-              value="Proceed"
-            />
-          </form>
+          <div className="form-qr">
+
+            <form
+              onSubmit={(e) => {
+                logFormData(e);
+              }}
+              className="regform"
+            >
+              <Form eventForm={eventForms[eventName]} />
+              <input
+                type="submit"
+                className="submit-btn merch-btn"
+                value="Proceed"
+              />
+            </form>
+            <img className="payment-img" src="/team/debayan.jpg" />
+          </div>
         </div>
       </>
     );

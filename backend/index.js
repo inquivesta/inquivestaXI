@@ -7,8 +7,24 @@ require("dotenv").config();
 const registerRoute = require("./routes/register");
 
 const app = express();
+// const allowedDomain = "https://inquivesta.in";
+const allowedDomains = [
+  "http://localhost:5173", 
+  "https://inquivesta.in", 
+  "https://www.inquivesta.in", 
+];
 
-app.use(cors());
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedDomains.includes(origin)) {
+      callback(null, true); // Allow requests from the allowed domain
+    } else {
+      callback(new Error("Not allowed by CORS")); // Block requests from other domains
+    }
+  },
+}));
+
+
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {

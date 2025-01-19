@@ -915,3 +915,23 @@ iframe {
   align-items: center;
   justify-content: center;
 }
+
+.form-qr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.payment-img {
+  height: 50vh;
+  margin-left: 2rem;
+}
+
+.radio {
+  /* padding-left: 10em; */
+  justify-content: space-around;
+  width: 60%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
