@@ -23,6 +23,7 @@ router.post("/", async (req, res) => {
   try {
 
     const eventName = req.body["event"];
+    console.log(eventName)
     delete req.body["event"];
     const countRef = ref(database, `/events/${eventName}/count`);
     var i = 0;
@@ -31,8 +32,9 @@ router.post("/", async (req, res) => {
           const value = snapshot.val();
           i = value ? Number(value.number) + 1 : 0;
         });
-
+    // console.log(i)
     const dbRef = ref(database, `/events/${eventName}/entry-${i}`);
+    // console.log(i)
     await set(dbRef, req.body);
     await set(countRef, {number : i});
     res.status(201).json({ message: "Registration successful" });
