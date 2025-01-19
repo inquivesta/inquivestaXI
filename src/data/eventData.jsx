@@ -2,11 +2,11 @@ var defaultForm = [
   "name", "email", "phone"
 ]
 
-const dropdown = (label, naam, opts) => {
+const dropdown = (label, naam, opts, handleOnChange) => {
   return (
     <>
       <label htmlFor='placeholder'>{label}</label>
-      <select className="dropdown" name={naam} id={naam} required>
+      <select className="dropdown" name={naam} id={naam} required onChange={(e) => {handleOnChange(e.target.value)}}>
         {opts.map((e) => (<option value={e}>{e === "" ? "Please Select an Option": e}</option>))}
       </select>
     </>)

@@ -14,15 +14,15 @@ const allowedDomains = [
   "https://www.inquivesta.in", 
 ];
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedDomains.includes(origin)) {
-      callback(null, true); // Allow requests from the allowed domain
-    } else {
-      callback(new Error("Not allowed by CORS")); // Block requests from other domains
-    }
-  },
-}));
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     if (!origin || allowedDomains.includes(origin)) {
+//       callback(null, true); 
+//     } else {
+//       callback(new Error("Not allowed by CORS")); 
+//     }
+//   },
+// }));
 
 
 app.use(bodyParser.json());

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
-const Form = ( {eventForm} ) => {
+const Form = ( {eventForm, rendering} ) => {
 
   const formFields = {
     name: [<label htmlFor="name">Name</label>, <input type="text" name="name" placeholder="Name"className='text-input' required></input>],
@@ -13,7 +13,7 @@ const Form = ( {eventForm} ) => {
   return (
     <>
         {eventForm ? eventForm.map((e) => (
-          <span className="form-group">{e.name ? e.ele : formFields[e]}</span>
+          !e.renderOn ? <span className="form-group">{e.name ? e.ele : formFields[e]}</span> : (rendering.some(item => item.includes(e.renderOn)) ? <span className="form-group">{e.ele}</span> : <span></span>)
           )):""}
     </>
   )
