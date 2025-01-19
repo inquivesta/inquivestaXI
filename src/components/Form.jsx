@@ -15,7 +15,7 @@ const textarea = (label, naam, pH) => {
   return (
     <>
       <label htmlFor='placeholder'>{label}</label>
-      <input type="text" name={naam} placeholder={pH} className='text-input' required></input>
+      <textarea name={naam} placeholder={pH} className='text-input' required></textarea>
     </>)
 };
 
