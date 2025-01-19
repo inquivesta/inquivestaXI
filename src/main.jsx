@@ -2,16 +2,15 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import Events from "./pages/Events.jsx";
-import Sponsors from "./pages/Sponsors.jsx";
-import Contact from "./pages/Contact.jsx";
-import Schedule from "./pages/Schedule.jsx";
-import Team from "./pages/Team.jsx";
-import Merch from "./pages/Merch.jsx";
-import Test from "./pages/Test.jsx";
-import Register from "./pages/Register.jsx";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Events from "./pages/Events";
+import Sponsors from "./pages/Sponsors";
+import Contact from "./pages/Contact";
+import Schedule from "./pages/Schedule";
+import Team from "./pages/Team";
+import Merch from "./pages/Merch";
+import Register from "./pages/Register";
 
 const router = createHashRouter([
   {
@@ -45,10 +44,6 @@ const router = createHashRouter([
   {
     path: "/merch",
     element: <Merch />,
-  },
-  {
-    path: "/test",
-    element: <Test/>
   },
   {
     path: "/register/*",
