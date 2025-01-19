@@ -547,6 +547,83 @@ nav {
   color: black;
 }
 
+
+.form-container {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100dvh; */
+  padding: 7em;
+  /* padding-left: 2em; */
+  gap: 3em;
+}
+
+.form-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100dvh;
+  background-image: url('/form-bg.webp');
+  z-index: -1;
+  background-position: 50%;
+  background-size: cover;
+}
+
+.form-title {
+  text-transform: uppercase;
+  font-family: "Bangers", serif;
+}
+
+.regform {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+}
+
+.submit-btn {
+  background-color: transparent;
+  color: #ca711a;
+  border-color: #ca711a;
+  font-family: "Bangers";
+  font-size: 2ch;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+
+}
+
+.form-group {
+  display: flex;
+  gap: 2em;
+  font-size: 2ch;
+  justify-content: space-between;
+  /* flex-direction: column; */
+  align-items: center;
+}
+
+.form-group label {
+  font-family: Bangers, serif;
+  font-weight: 600;
+  font-size: 2ch;
+}
+
+.text-input, .dropdown {
+  font-family: "Poppins", serif;
+  font-size: inherit;
+  min-width: 40ch;
+  padding: 0.5ch;
+}
+
+
 /* Media Queries */
 @media (max-height: 750px) {
   .hero-section, .team-container {
@@ -617,6 +694,21 @@ nav {
   .about-section {
     min-height: fit-content;
   }
+
+  .form-container {
+
+  max-width: 90vw;
+  }
+  
+  .form-group {
+    flex-direction: column;
+  }
+
+  .payment-img {
+    max-height: fit-content;
+    max-width: 40vw;
+  }
+
 
 }
 @media (max-width: 800px) {
@@ -840,4 +932,31 @@ iframe {
   gap: 1em;
   align-items: center;
   justify-content: center;
+}
+
+.form-qr {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+}
+
+.payment-img {
+  height: 50vh;
+  margin: 1rem;
+}
+
+.radio {
+  /* padding-left: 10em; */
+  justify-content: space-around;
+  width: 60%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.payment-toggles {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  /* position: absolute; */
 }
