@@ -48,6 +48,13 @@ const EventCard = ({eventProp}) => {
             </a>
             : ""
           }
+          {
+            eventProp.brochure ?
+            <a className="close-popup-btn" href={eventProp.brochure} target='_blank'>
+              Brochure
+            </a>
+            : ""
+          }
           <button className="close-popup-btn" onClick={togglePopup}>
             Close
           </button>
