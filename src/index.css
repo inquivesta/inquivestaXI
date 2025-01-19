@@ -549,12 +549,14 @@ nav {
 
 
 .form-container {
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* min-height: 100dvh; */
   padding: 7em;
+  /* padding-left: 2em; */
   gap: 3em;
 }
 
@@ -564,10 +566,10 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  height: 100dvh;
+  min-height: 100dvh;
   background-image: url('/form-bg.webp');
   z-index: -1;
-  background-position: 50% 50%;
+  background-position: 50%;
   background-size: cover;
 }
 
@@ -604,6 +606,7 @@ nav {
   gap: 2em;
   font-size: 2ch;
   justify-content: space-between;
+  /* flex-direction: column; */
   align-items: center;
 }
 
@@ -691,6 +694,21 @@ nav {
   .about-section {
     min-height: fit-content;
   }
+
+  .form-container {
+
+  max-width: 90vw;
+  }
+  
+  .form-group {
+    flex-direction: column;
+  }
+
+  .payment-img {
+    max-height: fit-content;
+    max-width: 40vw;
+  }
+
 
 }
 @media (max-width: 800px) {
@@ -918,13 +936,13 @@ iframe {
 
 .form-qr {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   align-items: center;
 }
 
 .payment-img {
   height: 50vh;
-  margin-left: 2rem;
+  margin: 1rem;
 }
 
 .radio {
@@ -934,4 +952,11 @@ iframe {
   align-items: center;
   display: flex;
   flex-direction: row;
+}
+
+.payment-toggles {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  /* position: absolute; */
 }
