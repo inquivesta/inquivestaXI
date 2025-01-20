@@ -901,6 +901,8 @@ iframe {
   border-radius: 8px;
   max-width: 85%;
   width: 50ch;
+  max-height: 70dvh;
+  overflow-y: scroll;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 101;
@@ -912,7 +914,7 @@ iframe {
 }
 
 .close-popup-btn {
-  margin-top: 15px;
+  /* margin-top: 15px; */
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
