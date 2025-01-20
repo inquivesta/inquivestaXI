@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 const dropdown = (label, naam, opts, handleOnChange) => {
   return (
     <>
-      <label htmlFor='placeholder'>{label}</label>
+      <label htmlFor={naam}>{label}</label>
       <select className="dropdown" name={naam} id={naam} required onChange={(e) => {handleOnChange( e.target.id, e.target.value)}}>
         {opts.map((e) => (<option value={e}>{e === "" ? "Please Select an Option": e}</option>))}
       </select>
