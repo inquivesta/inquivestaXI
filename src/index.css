@@ -586,6 +586,7 @@ nav {
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2rem;
+  font-family: Poppins, serif;
 }
 
 .submit-btn {
@@ -611,14 +612,20 @@ nav {
 }
 
 .form-group label {
-  font-family: Bangers, serif;
-  font-weight: 600;
-  font-size: 2ch;
+  font-family: Poppins, serif;
+  font-weight: 800;
+  font-size: 1.5ch;
+}
+
+.form-group a {
+  font-family: Poppins, serif;
+  color: blue;
+  text-decoration: underline;
 }
 
 .text-input, .dropdown {
   font-family: "Poppins", serif;
-  font-size: inherit;
+  font-size: 1.5ch;
   padding: 0.5ch;
 }
 

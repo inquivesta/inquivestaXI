@@ -75,6 +75,7 @@ const Register = () => {
       {name: "fideRating", ele: textarea("Fide Rating (if doesnt exist, write (N/A)", "fideRating", "Fide Rating if any" )},
       {name: "amt", ele: information("Amount Payable: INR 500")},
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+      {name: "walink", ele: [information("WhatsApp Group for this tounament:"), <a href="https://chat.whatsapp.com/JlSzLy7MOCMLySFSgVnlWv" target="_blank">https://chat.whatsapp.com/JlSzLy7MOCMLySFSgVnlWv</a>]}
     ]
  }
  
