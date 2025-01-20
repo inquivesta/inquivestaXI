@@ -18,7 +18,7 @@ const Events = () => {
         {name: "Photon", link: ""},
     ];
     const cultural = [
-        {name: "symphonics", link: "", details: "Compete for glory against other bands. 30 minutes to shine on an open air stage and win from a prizepool of 20000+"},
+        {name: "symphonix", link: "", details: "Compete for glory against other bands. 30 minutes to shine on an open air stage and win from a prizepool of 20000+"},
         {name: "monodrama", link: ""},
     ];
     const science = [
