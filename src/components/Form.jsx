@@ -6,7 +6,7 @@ const dropdown = (label, naam, opts, handleOnChange) => {
     <>
       <label htmlFor={naam}>{label}</label>
       <select className="dropdown" name={naam} id={naam} required onChange={(e) => {handleOnChange( e.target.id, e.target.value)}}>
-        {opts.map((e) => (<option value={e}>{e === "" ? "Please Select an Option": e}</option>))}
+        {opts.map((e) => (<option value={e.value ? e.value : e}>{e.label ? e.label : (e === "" ? "Please Select an Option" : e)}</option>))}
       </select>
     </>)
 };

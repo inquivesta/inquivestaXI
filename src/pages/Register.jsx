@@ -76,6 +76,14 @@ const Register = () => {
       {name: "amt", ele: information("Amount Payable: INR 500")},
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
       {name: "walink", ele: [information("WhatsApp Group for this tounament:"), <a href="https://chat.whatsapp.com/JlSzLy7MOCMLySFSgVnlWv" target="_blank">https://chat.whatsapp.com/JlSzLy7MOCMLySFSgVnlWv</a>]}
+    ],
+    Anicon: [...defaultForm, "institute", 
+      {name: "profession", ele: textarea("Current Profession", "profession", "Teacher/Student etc.")},
+      {name: "ticket", ele: dropdown("Ticket Type", "ticket", ["", {value: "aniconticket1", label: "Base"}, {value: "aniconticket2", label: "Base + Poster"}, {value: "aniconticket3", label: "Base + Poster + Manga Panel + Anime Bookmark"}], changeDropDown)}, 
+      {name: "amt1", renderOn: "1", ele: information("Amount Payable: INR 33")},
+      {name: "amt2", renderOn: "2", ele: information("Amount Payable: INR 49")},
+      {name: "amt3", renderOn: "3", ele: information("Amount Payable: INR 69")},
+      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
     ]
  }
  
