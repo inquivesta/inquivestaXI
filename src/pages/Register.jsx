@@ -56,7 +56,7 @@ const Register = () => {
 
    ],
    
-     csi: [...defaultForm, 
+     CSI: [...defaultForm, 
        "institute",
        {name: "members", ele: textarea("Other Team Members (1 - 4)", "members", "Provide one to four names")},
        {name: "leader", ele: textarea("Team Leader", "leader", "Name of a Team Leader")},
