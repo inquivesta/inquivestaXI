@@ -56,6 +56,18 @@ const Form = ( {eventForm, rendering} ) => {
     email: [<label htmlFor="email">Email</label>, <input type="email" name="email" placeholder="Email"className='text-input' required></input>],
     phone: [<label htmlFor="phone">Phone</label>, <input type="tel" name="phone" placeholder="Mobile Number"className='text-input' required></input>],
     institute: [<label htmlFor="name">Affliation</label>, <input className='text-input' type="text" name="institute" placeholder="Name of the institute you are currently enrolled in" required></input>],
+    dob: [<label htmlFor='dob'>Date of Birth</label>, <input type="date" className='text-input' name="dob"/>],
+    sex: [ <label htmlFor='sex'>Gender</label>,
+      <div className="radio">
+        <div>
+            <input type="radio" id='male' name="sex" value="male" required />
+            <label htmlFor="male">Male</label>
+        </div>
+        <div>
+            <input type="radio" id='female' name="sex" value="female" required />
+            <label htmlFor="female">Female</label>
+        </div>
+      </div>]
   }
 
   return (
