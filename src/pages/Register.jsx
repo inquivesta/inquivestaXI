@@ -52,9 +52,13 @@ const Register = () => {
 
    ],
    
-     headshot: [...defaultForm, 
-       ""
-     
+     csi: [...defaultForm, 
+       "institute",
+       {name: "members", ele: textarea("Other Team Members (1 - 4)", "members", "Provide one to four names")},
+       {name: "leader", ele: textarea("Team Leader", "leader", "Name of a Team Leader")},
+       {name: "teamname", ele: textarea("Team Name", "teamname", "Team Name")},
+       {name: "amt", ele: information("Amount payable: INR 200")},
+       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
    ]
  }
  
