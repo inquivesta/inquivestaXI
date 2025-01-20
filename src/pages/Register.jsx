@@ -64,7 +64,18 @@ const Register = () => {
        {name: "amt", ele: information("Amount payable: INR 200")},
        {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
    ],
-    ART_IN_A_CULTURE: [...defaultForm, "institute"],
+    ART_IN_A_CULTURE: [...defaultForm, "institute", {name: "amt", ele: information("This event has No registration Fees!.")}],
+    MIND_MELD: [...defaultForm, "institute", 
+      {name: "team-members", ele: information("Team Members (Min: 2 , Max: 4)")},
+      {name: "team-members", ele: textarea("Other Team Members (Provide 1-3 names)", "team-members", "Minimum 1 max 3 names")},
+      {name: "amt", ele: information("This event has No registration Fees!.")}
+    ],
+    Chess: [...defaultForm, "sex", "dob", "institute", 
+      {name: "fideId", ele: textarea("Fide ID (if doesnt exist, write N/A)", "fideId", "Link to your Fide ID")},
+      {name: "fideRating", ele: textarea("Fide Rating (if doesnt exist, write (N/A)", "fideRating", "Fide Rating if any" )},
+      {name: "amt", ele: information("Amount Payable: INR 500")},
+      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+    ]
  }
  
 
