@@ -916,6 +916,13 @@ iframe {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 101;
+} 
+.t-left {
+  text-align: left;
+}
+
+.popup-content ul {
+  padding-left: 3ch;
 }
 
 .popup-content h2 {

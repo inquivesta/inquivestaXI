@@ -46,7 +46,7 @@ const EventCard = ({eventProp}) => {
             <a className="close-popup-btn" href={eventProp.register} target='_blank'>
               Register
             </a>
-            : ""
+            : <a className='close-popup-btn'>Registrations Will Open Soon</a>
           }
           {
             eventProp.brochure ?
