@@ -628,6 +628,9 @@ nav {
   font-size: 1.5ch;
   padding: 0.5ch;
 }
+.dropdown {
+  max-width: 30ch;
+}
 
 
 /* Media Queries */
