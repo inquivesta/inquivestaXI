@@ -949,7 +949,11 @@ iframe {
   /* flex-direction: row; */
   align-items: center;
 }
-
+.qr-wrapper {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
 .qr-container {
   /* height: 50dvh; */
   width: 60%;
