@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
 }
-html {
+body, html {
   overflow-x: hidden;
 }
 .nav-btn {
@@ -892,16 +892,18 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .popup-content {
   background: white;
   padding: 20px;
   border-radius: 8px;
+  max-width: 85%;
   width: 50ch;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 101;
 }
 
 .popup-content h2 {
@@ -929,6 +931,8 @@ iframe {
   gap: 1em;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .form-qr {
