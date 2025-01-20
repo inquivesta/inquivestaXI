@@ -13,6 +13,7 @@ const Register = () => {
 
   const [eventName, setEventName] = useState("");
   const [dropdownValues, setDropdownValues] = useState({});
+  const [checkboxVals, setCheckboxVals] = useState({});
 
   const navigate = useNavigate();
 
@@ -23,6 +24,14 @@ const Register = () => {
   }, []);
 
   const changeDropDown = (name, value) => {
+    setDropdownValues((prevValues) => ({
+      ...prevValues, 
+      [name]: value, 
+    }));
+    // console.log(dropdownValues)
+
+  }
+  const changeCheckBox = (name, value) => {
     setDropdownValues((prevValues) => ({
       ...prevValues, 
       [name]: value, 
@@ -52,6 +61,7 @@ const Register = () => {
      {name: "exp", ele: textarea("Previous MUN experiences (if any)", "exp", "write NA if no previous experience")},
      {name: "amt1", renderOn: "Single", ele: information("Amount payable: INR 500")},
      {name: "amt2", renderOn: "Double", ele: information("Amount payable: INR 900")},
+     {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
 
    ],
@@ -62,6 +72,7 @@ const Register = () => {
        {name: "leader", ele: textarea("Team Leader", "leader", "Name of a Team Leader")},
        {name: "teamname", ele: textarea("Team Name", "teamname", "Team Name")},
        {name: "amt", ele: information("Amount payable: INR 200")},
+      {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
        {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
    ],
     ART_IN_A_CULTURE: [...defaultForm, "institute", {name: "amt", ele: information("This event has No registration Fees!.")}],
@@ -75,8 +86,40 @@ const Register = () => {
       {name: "fideRating", ele: textarea("Fide Rating (if doesnt exist, write (N/A)", "fideRating", "Fide Rating if any" )},
       {name: "amt", ele: information("Amount Payable: INR 500")},
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+      {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
       {name: "walink", ele: [information("WhatsApp Group for this tounament:"), <a href="https://chat.whatsapp.com/JlSzLy7MOCMLySFSgVnlWv" target="_blank">https://chat.whatsapp.com/JlSzLy7MOCMLySFSgVnlWv</a>]}
+    ],
+    Anicon: [...defaultForm, "institute", 
+      {name: "profession", ele: textarea("Current Profession", "profession", "Teacher/Student etc.")},
+      {name: "ticket", ele: dropdown("Ticket Type", "ticket", ["", {value: "aniconticket1", label: "Base"}, {value: "aniconticket2", label: "Base + Poster"}, {value: "aniconticket3", label: "Base + Poster + Manga Panel + Anime Bookmark"}], changeDropDown)}, 
+      {name: "amt1", renderOn: "1", ele: information("Amount Payable: INR 33")},
+      {name: "amt2", renderOn: "2", ele: information("Amount Payable: INR 49")},
+      {name: "amt3", renderOn: "3", ele: information("Amount Payable: INR 69")},
+      {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
+      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+    ],
+    Headshot: [...defaultForm,
+      {name: "game", ele: dropdown("Game", "game", ["", "Valorant", "Marvel Rivals", "FC 25"], changeDropDown)}, 
+      {name: "team-members-valo", renderOn: "Valorant", ele: textarea("Enter 7 Team Member details (Name, and Game ID (registered on tracker.gg)", "team-members-valo", "Team member information")},
+      {name: "team-members-rivals", renderOn: "Marvel Rivals", ele: textarea("Enter 7 Team Member details (Name, and Game ID (registered on tracker.gg)", "team-members-rivals", "Team member information")},
+      {name: "amt1", renderOn: "Valorant", ele: information("Amount Payable: INR 300")},
+      {name: "amt2", renderOn: "Marvel Rivals", ele: information("Amount Payable: INR 300")},
+      {name: "amt3", renderOn: "FC 25", ele: information("Amount Payable: INR 100")},
+      {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
+      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
     ]
+    // Soulbeats_Xpress: [...defaultForm, "institute",
+    //   {name: "amt", ele: information("Amount Payable: INR 199 [INR 50 Off. for IISER-K Students]")},
+    //   {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+    // ], 
+    // Soulbeats_Survival: [...defaultForm, "institute",
+    //   {name: "amt", ele: information("Amount Payable: INR 149 [INR 50 Off. for IISER-K Students]")},
+    //   {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+    // ],
+    // Soulbeats_Workshop: [...defaultForm, "institute", 
+    //   {name: "amt", ele: information("Amount Payable: INR 199 [INR 50 Off. for IISER-K Students]")},
+    //   {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+    // ]
  }
  
 
@@ -141,7 +184,7 @@ const Register = () => {
               />
             </form>
             {/* <img className="payment-img" src="/team/debayan.jpg" /> */}
-            <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>
+            {/* <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/> */}
         </div>
       </>
     );
