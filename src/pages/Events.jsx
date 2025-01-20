@@ -18,7 +18,7 @@ const Events = () => {
         {name: "Photon", link: ""},
     ];
     const cultural = [
-        {name: "battle of bands", link: ""},
+        {name: "symphonics", link: ""},
         {name: "monodrama", link: ""},
     ];
     const science = [
