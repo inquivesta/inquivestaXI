@@ -14,13 +14,22 @@ const Register = () => {
   const [eventName, setEventName] = useState("");
   const [dropdownValues, setDropdownValues] = useState({});
   const [checkboxVals, setCheckboxVals] = useState({});
+  const [renderkaro, setRenderkaro] = useState(0);
 
   const navigate = useNavigate();
-
+  const checkBackend = async () => {
+    try {
+      const response = await fetch(import.meta.env.VITE_BACKEND, { method: "GET" });
+      setRenderkaro(1);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   useEffect(() => {
     const url = window.location.href.split("/");
     const eventKey = url[url.length - 1];
     setEventName(eventKey);
+    checkBackend();
   }, []);
 
   const changeDropDown = (name, value) => {
@@ -125,6 +134,9 @@ const Register = () => {
       {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
     ], 
+    testEvent: [...defaultForm,
+      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+    ]
     // Soulbeats_Survival: [...defaultForm, "institute",
     //   {name: "amt", ele: information("Amount Payable: INR 149 [INR 50 Off. for IISER-K Students]")},
     //   {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
@@ -137,11 +149,11 @@ const Register = () => {
  
 
   const logFormData = async (e) => {
+    setRenderkaro(2);
     e.preventDefault();
 
     const data = new FormData(e.target);
     const holder = new Object();
-
     holder["event"] = eventName;
     for (const [name, val] of data) {
       const formFields = eventForms[eventName].map((e) =>
@@ -168,21 +180,31 @@ const Register = () => {
       // navigate("/events");
       if (data["qrcode"]) {
         window.open(data["qrcode"], "_blank")
-      } else {
-        navigate("/events");
       }
+      navigate("/events")
+      
       // console.log(data["qrcode"])
     } catch (error) {
       console.error("Error posting data:", error);
     }
   };
   if (eventForms[eventName]) {
+    if (renderkaro === 0){
+      return (
+      <>
+        <Navbar />
+        <div className="form-container">
+        <h1 className="form-title"> Couldn't fetch data. Try again after a few minutes.</h1>
+        </div>
+      </>
+      )
+
+    } else if (renderkaro === 1) {
     return (
       <>
         <Navbar />
         <div className="form-container">
           <h1 className="form-title"> Register for {eventName}</h1>
-
             <form
               onSubmit={(e) => {
                 logFormData(e);
@@ -201,6 +223,16 @@ const Register = () => {
         </div>
       </>
     );
+  } else if (renderkaro === 2) {
+    return (
+      <>
+        <Navbar />
+        <div className="form-container">
+        <h1 className="form-title"> Please Wait... Do not close this window</h1>
+        </div>
+      </>
+    )
+  }
   } else {
     return <h1>Wrong Place BRAH!</h1>;
   }
