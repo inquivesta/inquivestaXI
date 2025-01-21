@@ -142,7 +142,7 @@ const Register = () => {
       {name: "member2email", ele: textarea("Team Member 3's email", "member2email", "Email Addr. of your other team member goes here")},
       {name: "member3", ele: textarea("Team Member 4's Name", "member3", "Name of your other team member goes here")},
       {name: "member3email", ele: textarea("Team Member 4's email", "member3email", "Email Addr. of your other team member goes here")},
-      {name: "amt", ele: information("Amount Payable: INR 150 (INR 50 Off. for IISER Kolkata Students")},
+      {name: "amt", ele: information("Amount Payable: INR 150 (INR 50 Off. for IISER Kolkata Students)")},
       {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
     ]
