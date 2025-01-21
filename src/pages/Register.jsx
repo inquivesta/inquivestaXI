@@ -134,9 +134,9 @@ const Register = () => {
       {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
     ], 
-    testEvent: [...defaultForm,
-      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
-    ]
+    // testEvent: [...defaultForm,
+    //   {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+    // ]
     // Soulbeats_Survival: [...defaultForm, "institute",
     //   {name: "amt", ele: information("Amount Payable: INR 149 [INR 50 Off. for IISER-K Students]")},
     //   {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
