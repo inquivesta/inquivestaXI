@@ -549,13 +549,14 @@ nav {
 
 
 .form-container {
-  width: 95%;
-  min-height: 100dvh;
+  width: 100dvw;
+  /* min-height: 100dvh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 7em;
+  padding-bottom: 2rem;
   gap: 3em;
 }
 
@@ -580,7 +581,7 @@ nav {
 .regform {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
+  max-width: 95%;
   gap: 1em;
   padding: 1rem 3rem 1rem 3rem;
   backdrop-filter: blur(10px);
@@ -627,8 +628,6 @@ nav {
   font-family: "Poppins", serif;
   font-size: 1.5ch;
   padding: 0.5ch;
-}
-.dropdown {
   max-width: 30ch;
 }
 
