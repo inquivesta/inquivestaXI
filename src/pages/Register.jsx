@@ -19,7 +19,7 @@ const Register = () => {
   const navigate = useNavigate();
   const checkBackend = async () => {
     try {
-      const response = await fetch(import.meta.env.VITE_BACKEND, { method: "GET" });
+      const response = await fetch(import.meta.env.VITE_BACKEND, { method: "GET"});
       setRenderkaro(1);
     } catch (error) {
       console.error(error);
@@ -148,9 +148,9 @@ const Register = () => {
       {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
     ]},
-    // testEvent: {formTitle: "test event", form: [...defaultForm,
-    //   // {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
-    // ]},
+    testEvent: {formTitle: "test event", form: [...defaultForm,
+      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+    ]},
  }
  
 
@@ -188,8 +188,8 @@ const Register = () => {
       // console.log(response);
       alert(data["message"]);
       // navigate("/events");
-      if (data["qrcode"]) {
-        window.open(data["qrcode"], "_blank");
+      if (data["utr"]) {
+        window.open(import.meta.env.VITE_BACKEND+"/?qrcode="+data["utr"], "_blank");
       }
       navigate("/events")
       
