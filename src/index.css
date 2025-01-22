@@ -616,6 +616,7 @@ nav {
   font-family: Poppins, serif;
   font-weight: 800;
   font-size: 1.5ch;
+  max-width: 30ch;
 }
 
 .form-group a {
@@ -992,4 +993,8 @@ iframe {
   display: flex;
   justify-content: space-around;
   /* position: absolute; */
+}
+
+.form-group .info{
+  max-width: 75%;
 }

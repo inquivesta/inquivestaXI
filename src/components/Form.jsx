@@ -21,7 +21,7 @@ const textarea = (label, naam, pH) => {
 
 const information = (label, naam, pH) => {
   return (
-      <label>{label}</label>
+      <label className='info'>{label}</label>
   )
 };
 

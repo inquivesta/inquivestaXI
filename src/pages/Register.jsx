@@ -148,7 +148,182 @@ const Register = () => {
       {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
     ]},
-    testEvent: {formTitle: "test event", form: [...defaultForm,
+    Basketball3v3: {formTitle: "3v3 Basketball", form: [...defaultForm, {name: "team-name", ele: textarea("Team Name", "team-name", "Enter your Team Name")},
+      {name: "member0", ele: textarea("Team Member 1's Name", "member0", "Name of first team member goes here")},
+      {name: "member1", ele: textarea("Team Member 2's Name", "member1", "Name of second team member goes here")},
+      {name: "member2", ele: textarea("Team Member 3's Name", "member2", "Name of third team member goes here")},
+      {name: "member3", ele: textarea("Team Member 4's Name (N/A if no 4th member)", "member3", "Name of fourthteam member goes here (N/A if no 4th member)")},
+      {name: "accomodation", ele: radio("Do you need accomodation on campus", "accomodation", ["Yes", "No"], changeDropDown)},
+      {name: "female", renderOn: "Yes", ele: textarea("Number of female members to accomodate", "female", "0 if none")},
+      {name: "male", renderOn: "Yes", ele: textarea("Number of male members to accomodate", "male", "0 if none")},
+      {name: "amt", ele: information("Amount Payable: INR 100")},
+      {name: "amt_acco", renderOn: "Yes", ele: information("Accomodation amount will be collected on spot")},
+      {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
+      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
+      ]},
+
+    Photon: {formTitle: "Photon", form: [...defaultForm, "institute", 
+      {name:"insta", ele: textarea("Instagram ID", "insta", "N/A if not applicable")}, 
+      {name: "subevent", ele: dropdown("Select the event you want to participate in", "subevent", ["", {value: "1 acco", label: "Photo Story"}, {value: "2", label: "Theme Photography"}, {value: "3 acco", label: "Both"}], changeDropDown)}, 
+      {name: "submission", ele: textarea("Upload all your entries to a google drive folder and attach the link here. You can edit your entries till 6th Feb.", "submission", "Enter a google drive link to your submissions")},
+      {name: "accomodation", renderOn: "acco", ele: radio("Do you need accomodation on campus for Photo Story", "accomodation", ["Yes", "No"], changeDropDown)}, 
+      {name: "information", renderOn: "Yes", ele: information("Accomodation amount will be collected on spot")},
+      {name: "amt1", renderOn: "1", ele: information("Amount Payable: INR 20")}, 
+      {name: "amt2", renderOn: "2", ele: information("Amount Payable: INR 20")}, 
+      {name: "amt3", renderOn: "3", ele: information("Amount Payable: INR 40")}, 
+      {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>}, 
+      {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},]},
+      drama: {
+        formTitle: "Drama",
+        form: [
+          ...defaultForm,
+          "institute",
+          {
+            name: "subevent",
+            ele: dropdown("Select Event Type", "subevent", ["", {value: "1", label:"Monodrama"}, {value: "2", label: "Nukad Natak"}, {value:"3", label: "Drama Llama Ding Dong"}], changeDropDown),
+          },
+          {
+            name: "props",
+            renderOn: "1",
+            ele: textarea("Basic props required", "props", "Number of chairs, tables, etc. (if required)")
+          },
+          {
+            name: "movie",
+            renderOn: "3",
+            ele: textarea("Enter your favourite movie", "movie", "")
+          },
+          {
+            name: "character",
+            renderOn: "3",
+            ele: textarea("Enter your favourite fictional character", "character", "")
+          },
+          {
+            name: "membernum",
+            renderOn: "2",
+            ele: textarea("Enter number of participants", "membernum", "Maximum 20, Minimum 5")
+          },
+          {
+            name: "membername",
+            renderOn: "2",
+            ele: textarea("Enter names of all the participants", "membername", "Enter names of all the participants (comma separated).")
+          },
+          {
+            name: "props",
+            renderOn: "2",
+            ele: textarea("Basic props required", "props", "Number of chairs, tables, etc. (if required)")
+          },
+          {
+            name: "amt2",
+            renderOn: "2",
+            ele: information("Registration fees: 200 INR for the whole team")
+          },
+          {
+            name: "amt3",
+            renderOn: "3",
+            ele: information("No registration fees")
+          },
+          {
+            name: "amt1",
+            renderOn: "1",
+            ele: information("Registration fees: 150 INR")
+          },
+          {
+            name: "qr",
+            ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>}, 
+          {
+            name: "utr", 
+            ele: textarea("Enter full UTR number", "utr", "UTR goes here")
+          },
+        ]
+      },
+      Futsal: {
+        formTitle: "Futsal",
+        form: [
+          ...defaultForm,
+          "institute",
+          {
+            name: "teamName",
+            ele: textarea("Enter name of team", "teamName", "")
+          },
+          {
+            name: "playing",
+            ele: textarea("Enter names of the playing 5 members", "playing", "Boys - 3, Girls - 2")
+          },
+          {
+            name: "subsitute",
+            ele: textarea("Enter names of subsitutes (if any)", "substitute", "Boys - 1, Girls - 1")
+          },
+          {
+            name: "accomodation",
+            ele: information("Accomodation will be provided on a first come first serve basis if required. Accomodation will be chargeable.")
+          },
+          {
+            name: "amt",
+            ele: information("Registration fees: 150 INR per team")
+          },
+          {
+            name: "qr",
+            ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>}, 
+          {
+            name: "utr", 
+            ele: textarea("Enter full UTR number", "utr", "UTR goes here")
+          },
+        ]
+      },
+      RecycledRunway: {
+        formTitle: "Recycled Runway",
+        form: [
+          ...defaultForm,
+          "insitute",
+          {
+            name: "team-name",
+            ele: textarea("Team Name", "team-name", "Enter your Team Name")
+          },
+          {
+            name: "member1", 
+            ele: textarea("Team Member 2's Name", "member1", "Name of second team member goes here")
+          },
+          {
+            name: "member2", 
+            ele: textarea("Team Member 3's Name", "member2", "Name of third team member goes here")
+          },
+          {
+            name: "member3", 
+            ele: textarea("Team Member 4's Name", "member3", "Name of fourth team member goes here.")
+          },
+          {
+            name: "amt",
+            ele: information("Registration fees: 120 INR per team")
+          },
+          {
+            name: "qr",
+            ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>}, 
+          {
+            name: "utr", 
+            ele: textarea("Enter full UTR number", "utr", "UTR goes here")
+          },
+        ]
+      },
+      BeatTheDrop: {
+        formTitle: "Beat The Drop",
+        form: [
+          ...defaultForm,
+          "insitute",
+          {
+            name: "team-name",
+            ele: textarea("Enter team name", "team-name", "Team name")
+          },
+          {
+            name: "members",
+            ele: textarea("Enter all team members' names", "members", "Name of team members (N/A) if single participation")
+          },
+          {
+            name: "amt",
+            ele: information("No registration fees required.")
+          }
+        ]
+      },
+      testEvent: {formTitle: "test event", form: [...defaultForm,
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
     ]},
  }
