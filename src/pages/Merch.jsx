@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar.jsx'
 import MerchImages from '../components/MerchImages.jsx';
 
 const Merch = () => {
-    const buyLink = "https://forms.gle/SVzAFLAte8Xn1sVb6";
+    const buyLink = "";
     const merch = [
         {title: "Hoodie (Butterfly) [Rs 849]", images: ["2.png", "1.png"], link: buyLink},
         {title: "Hoodie (Gravity) [Rs 849]", images: ["4.png", "3.png"], link: buyLink},
@@ -23,7 +23,7 @@ const Merch = () => {
                             <span className="merch-title">{e.title}</span>
                                 {/* <img src={e.image ? e.image : "/merch/default.png"} alt={e.title}/> */}
                                 <MerchImages images={e.images} />
-                            <a className="merch-btn" href={e.link ? e.link : "/#/merch"}>Order</a>
+                            <a className="merch-btn" href={e.link ? e.link : "/#/merch"}>Preorders Are Over</a>
                         </div>
                     ))
                 }

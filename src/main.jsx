@@ -11,6 +11,8 @@ import Schedule from "./pages/Schedule";
 import Team from "./pages/Team";
 import Merch from "./pages/Merch";
 import Register from "./pages/Register";
+import EventLogin from "./pages/EventLogin";
+import Registrations from "./pages/Registrations";
 
 const router = createHashRouter([
   {
@@ -48,6 +50,14 @@ const router = createHashRouter([
   {
     path: "/register/*",
     element: <Register />,
+  },
+  {
+    path: "/eventlogin",
+    element: <EventLogin />
+  },
+  {
+    path: "/registrations",
+    element: <Registrations />
   },
 ]);
 createRoot(document.getElementById("root")).render(
