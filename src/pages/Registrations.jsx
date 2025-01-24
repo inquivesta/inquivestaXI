@@ -105,7 +105,7 @@ const Registrations = () => {
                               <td>{k + 1}</td>
                               {
                                 eventForms[event].form.map((field, j) => (
-                                  <td key={`${event}${j}`}>{eventData[event][e][field.name ? field.name : field] ? eventData[event][e][field.name ? field.name : field] : "-"}</td>
+                                  <td key={`${event}${j}`}>{eventData[event][e][field.name ? field.name : field] ? (field.valueMap ? field.valueMap[eventData[event][e][field.name ? field.name : field]] : eventData[event][e][field.name ? field.name : field]) : "-"}</td>
                                   // <td key={`${event}${j}`}>{eventData[event][e][field]}</td>
                                 ))
                               }
