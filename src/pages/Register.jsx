@@ -173,7 +173,7 @@ const Register = () => {
       {name: "amt3", renderOn: "3", ele: information("Amount Payable: INR 40")}, 
       {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>}, 
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},]},
-      drama: {
+      Drama: {
         formTitle: "Drama",
         form: [
           ...defaultForm,
@@ -321,6 +321,107 @@ const Register = () => {
             name: "amt",
             ele: information("No registration fees required.")
           }
+        ]
+      },
+      Thrust: {
+        formTitle: "Thrust",
+        form: [
+          ...defaultForm,
+          "institute",
+        ]
+      },
+      GNQ: {
+        formTitle: "GNQ",
+        form: [
+          ...defaultForm,
+          "institute",
+          {
+            name: "member2", 
+            ele: textarea("Enter name of second member", "member2", "Name of second team member")},
+          {
+            name: "amt", 
+            ele: information(["Registration fees:",<br/>,"49 INR per team (non-IISER K participants)", <br/>,"29 INR per team (IISER K participants) "])},
+          {
+            name: "qr",
+            ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>}, 
+          {
+            name: "utr", 
+            ele: textarea("Enter full UTR number", "utr", "UTR goes here")
+          },
+          
+        ]
+      },
+      Symphonix: {
+        formTitle: "Symphonix",
+        form: [
+          ...defaultForm,
+          "institute",
+          {
+            name: "band",
+            ele: textarea("Enter name of band", "band", "Name of band")
+          },
+          {
+            name: "number",
+            ele: textarea("Total number of band members", "number", "Number of members")
+          },
+          {
+            name: "members",
+            ele: textarea("Enter names of all band members", "members", "Names of members")
+          },
+          {
+            name: "amt", 
+            ele: information("Registration fees: 500 INR")
+          },
+          {
+            name: "qr",
+            ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>}, 
+          {
+            name: "utr", 
+            ele: textarea("Enter full UTR number", "utr", "UTR goes here")
+          },
+        ]
+      },
+      Soulbeats: {
+        formTitle: "Soulbeats",
+        form: [
+          ...defaultForm,
+          "institute",
+          {
+            name: "subevent",
+            ele: dropdown("Select event to participate", "subevent", ["", "XPress", "Survival of the Fittest", "Workshop"], changeDropDown),
+          },
+          {
+            name: "numbers",
+            ele: dropdown("Select number of group members", "numbers", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], changeDropDown),
+            renderOn: "XPress",
+          },
+          {
+            name: "members",
+            ele: textarea("Enter name of other group members", "members", "N/A if solo participation"),
+            renderOn: "XPress"
+          },
+          {
+            name: "amt3",
+            ele: information(["Registration fees:",<br/>, "89 INR (IISER-K participants)",<br/>, "149 INR (Other participants)"]),
+            renderOn: "Workshop",
+          },
+          {
+            name: "amt2",
+            ele: information("Registration fees: 49 INR per participant"),
+            renderOn: "Survival"
+          },
+          {
+            name: "amt1",
+            ele: information(["Registration fees:",<br/>, `${dropdownValues.numbers ? 69 * dropdownValues.numbers : 69} INR (IISER-K participants)`,<br/>, `${dropdownValues.numbers ? 79 * dropdownValues.numbers : 79} INR (Other participants)`]),
+            renderOn: "XPress",
+          },
+          {
+            name: "qr",
+            ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>}, 
+          {
+            name: "utr", 
+            ele: textarea("Enter full UTR number", "utr", "UTR goes here")
+          },
         ]
       },
       testEvent: {formTitle: "test event", form: [...defaultForm,
