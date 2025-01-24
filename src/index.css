@@ -632,6 +632,35 @@ nav {
   max-width: 30ch;
 }
 
+/* Event Data Tables */
+
+.table-container {
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+table {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+tbody td {
+  max-width: 25ch;
+  text-align: center;
+  text-wrap: wrap;
+  word-wrap: break-word;
+  padding: 1ch;
+  outline: 1px solid black;
+}
+
+th {
+  text-transform: capitalize;
+}
 
 /* Media Queries */
 @media (max-height: 750px) {
