@@ -458,6 +458,70 @@ var eventForms = {
       // },
     ],
   },
+
+  Thrust: {
+    formTitle: "Thrust",
+    form: [
+      ...defaultForm,
+      "institute",
+    ]
+  },
+  GNQ: {
+    formTitle: "GNQ",
+    form: [
+      ...defaultForm,
+      "institute",
+      {
+        name: "member2", 
+      },
+      {        
+        name: "utr", 
+      },
+      
+    ]
+  },
+  Symphonix: {
+    formTitle: "Symphonix",
+    form: [
+      ...defaultForm,
+      "institute",
+      {
+        name: "band",
+        label: "Band Name"
+      },
+      {
+        name: "number",
+        label: "Number of members"
+      },
+      {
+        name: "members",
+        label: "Name of all members"
+      },
+      {
+        name: "utr",
+      }
+    ]
+  },
+  Soulbeats: {
+    formTitle: "Soulbeats",
+    form: [
+      "institute",
+          {
+            name: "subevent",
+          },
+          {
+            name: "numbers",
+            label: "Number of Group Members",
+          },
+          {
+            name: "members",
+            label: "Names of Group Members"
+          },
+          {
+            name: "utr", 
+          },
+    ]
+  }, 
   testEvent: {
     formTitle: "test event",
     form: [
