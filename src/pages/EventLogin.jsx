@@ -88,10 +88,12 @@ const EventLogin = () => {
 
   } else {
     return (
-        <form method='POST' onSubmit={signin}>
-            <label htmlFor='username'>Username</label><input name = "username" type="text" required></input> 
-            <label htmlFor='password'>Password</label><input name = "password" type="password" required></input> 
+        <form method='POST' onSubmit={signin} className='login-form-container'>
+          <span className="login-wrapper">
+            <span className="login-field"><label htmlFor='username'>Username</label><input name = "username" type="text" required></input> </span>
+            <span className="login-field"><label htmlFor='password'>Password</label><input name = "password" type="password" required></input> </span>
             <input type='submit' value="Login"/>
+          </span>
         </form>
     );
   }
