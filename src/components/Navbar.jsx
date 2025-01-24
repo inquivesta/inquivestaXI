@@ -19,6 +19,7 @@ const Navbar = ({active}) => {
             <li><Link to="/events" className={`nav-link glitch ${active == "events" ? "active" : ""}`}>Events</Link></li>
             <li><Link to="/merch" className={`nav-link glitch ${active == "merch" ? "active" : ""}`}>Merch</Link></li>
             <li><Link to="/sponsors" className={`nav-link glitch ${active == "sponsors" ? "active" : ""}`}>Sponsors</Link></li>
+            <li><Link to="/team" className={`nav-link glitch ${active == "team" ? "active" : ""}`}>Team</Link></li>
             <li><Link to="/contact" className={`nav-link glitch ${active == "contact" ? "active" : ""}`}>Contact Us</Link></li>
         </ul>
     </nav>
