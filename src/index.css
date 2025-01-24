@@ -343,12 +343,12 @@ nav {
 .team-container {
   min-height: 100dvh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   font-family: 'Bangers', serif;
   gap: 3rem;
   padding-top: 7rem;
+  flex-wrap: wrap;
 }
 .team-container::before {
   content: '';
