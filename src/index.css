@@ -631,7 +631,63 @@ nav {
   padding: 0.5ch;
   max-width: 30ch;
 }
+/* eventlogin page */
+.login-form-container {
+  width: 100dvw;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3ch;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 1rem;
+}
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: Poppins;
+}
 
+.login-wrapper input {
+  font-family: Poppins;
+  padding: 1ch;
+}
+/* Event Data Tables */
+
+.table-container {
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+table {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+tbody td {
+  max-width: 25ch;
+  text-align: center;
+  text-wrap: wrap;
+  word-wrap: break-word;
+  padding: 1ch;
+  outline: 1px solid black;
+}
+
+th {
+  text-transform: capitalize;
+}
 
 /* Media Queries */
 @media (max-height: 750px) {
