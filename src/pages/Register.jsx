@@ -173,7 +173,7 @@ const Register = () => {
       {name: "amt3", renderOn: "3", ele: information("Amount Payable: INR 40")}, 
       {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>}, 
       {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},]},
-      drama: {
+      Drama: {
         formTitle: "Drama",
         form: [
           ...defaultForm,

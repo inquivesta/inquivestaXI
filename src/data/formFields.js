@@ -335,7 +335,7 @@ var eventForms = {
       },
     ],
   },
-  drama: {
+  Drama: {
     formTitle: "Drama",
     form: [
       ...defaultForm,
