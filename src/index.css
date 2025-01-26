@@ -335,7 +335,8 @@ nav {
   place-items: center;
   gap: 1em;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 10;
+  position: relative;
+  /* z-index: 1; */
   /* backdrop-filter: blur(10px); */
 }
 
