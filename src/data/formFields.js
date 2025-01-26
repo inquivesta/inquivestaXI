@@ -464,7 +464,19 @@ var eventForms = {
     form: [
       ...defaultForm,
       "institute",
-    ]
+      {
+        name: "teamname",
+        label: "Team Name",
+      },
+      {
+        name: "members",
+        label: "Other Team Members"
+      },
+      {
+        name: "ownBottle",
+        label: "Can you manage your own 2L bottle ?"
+      },
+    ],
   },
   GNQ: {
     formTitle: "GNQ",
