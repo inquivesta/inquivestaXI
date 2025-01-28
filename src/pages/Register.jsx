@@ -779,11 +779,9 @@ const Register = () => {
     ART_IN_A_CULTURE: {
       formTitle: "Art In a Culture",
       form: [
-        ...defaultForm,
-        "institute",
         {
           name: "amt",
-          ele: information("This event has No registration Fees!."),
+          ele: information("Registrations for this event are Closed right now!"),
         },
       ],
     },
