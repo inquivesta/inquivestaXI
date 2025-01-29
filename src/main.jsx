@@ -13,6 +13,7 @@ import Merch from "./pages/Merch";
 import Register from "./pages/Register";
 import EventLogin from "./pages/EventLogin";
 import Registrations from "./pages/Registrations";
+import Timeline from "./pages/Timeline";
 
 const router = createHashRouter([
   {
@@ -58,6 +59,10 @@ const router = createHashRouter([
   {
     path: "/registrations",
     element: <Registrations />
+  },
+  {
+    path: "/timeline",
+    element: <Timeline />
   },
 ]);
 createRoot(document.getElementById("root")).render(
