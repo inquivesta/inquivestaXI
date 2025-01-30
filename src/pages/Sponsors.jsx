@@ -25,12 +25,13 @@ const Sponsors = () => {
         { name: 'Event Sponsor', logo: "red.png", size: 'large' }, 
       ];
     const currSponsorsList = [
-        { name: 'HDFC Bank', logo: "hdfc.png", size: 'large' },   
+      { name: 'Title Sponsor', logo: "sbi.jpg", size: 'large' }, 
         { name: 'Merchandise Partner', logo: "tusker.png", size: 'small' },   
         { name: 'Finlatics', logo: "finlatics.png", size: 'small' },   
-        { name: 'LIC', logo: "lic.svg", size: 'large' },   
+        { name: 'Shar Projects', logo: "shar.jpg", size: 'large' },   
         {name: 'DKMS BMST', logo: "dkms.png", size: 'large'},
         {name: 'DSS', logo: "dss.png", size: 'large'},
+        {name: 'Fast Food Partner', logo: "momo.jpeg", size: 'small'},
       ];
   return (
     <>
