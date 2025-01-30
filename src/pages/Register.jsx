@@ -787,29 +787,29 @@ const Register = () => {
     //     },
     //   ],
     // },
-    MIND_MELD: {
-      formTitle: "Mind Meld",
-      form: [
-        ...defaultForm,
-        "institute",
-        {
-          name: "team-members",
-          ele: information("Team Members (Min: 2 , Max: 4)"),
-        },
-        {
-          name: "team-members",
-          ele: textarea(
-            "Other Team Members (Provide 1-3 names)",
-            "team-members",
-            "Minimum 1 max 3 names"
-          ),
-        },
-        {
-          name: "amt",
-          ele: information("This event has No registration Fees!."),
-        },
-      ],
-    },
+    // MIND_MELD: {
+    //   formTitle: "Mind Meld",
+    //   form: [
+    //     ...defaultForm,
+    //     "institute",
+    //     {
+    //       name: "team-members",
+    //       ele: information("Team Members (Min: 2 , Max: 4)"),
+    //     },
+    //     {
+    //       name: "team-members",
+    //       ele: textarea(
+    //         "Other Team Members (Provide 1-3 names)",
+    //         "team-members",
+    //         "Minimum 1 max 3 names"
+    //       ),
+    //     },
+    //     {
+    //       name: "amt",
+    //       ele: information("This event has No registration Fees!."),
+    //     },
+    //   ],
+    // },
     Chess: {
       formTitle: "Inquivesta one day Rapid Open chess tournament",
       form: [
