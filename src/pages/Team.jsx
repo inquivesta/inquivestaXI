@@ -23,11 +23,12 @@ const Team = () => {
     ];
     const media = [
         {name: "Thejas Suresh", pic: "thejas.jpg", links: true, insta: "thejas.pxl", mail: "ts22ms021@iiserkol.ac.in"},
+        {name: "Swapnanil Sur", pic: "swapnanil.jpg", links: true, insta: "kim_kortobbo_bimuroh", mail: "ss22ms001@iiserkol.ac.in"},
     ];
 
     const webdev = [
         {name: "Sattwamo Ghosh", links: true, github:"sattwamo", insta: "__sattwamo__", pic: "sattwamo.jpg", mail: "sg21ms204@iiserkol.ac.in"},
-        {name: "Debayan Sarkar", pic: "deb.jpg", links:true, insta: "debayansarkar_", github: "TheSillyCoder", mail:"ds22ms002@iiserkol.ac.in", twitter: "thesillycoder", site: "https://thesillycoder.github.io"},
+        {name: "Debayan Sarkar", pic: "deb.jpg", links:true, insta: "debayansarkar_", github: "nayabed", mail:"ds22ms002@iiserkol.ac.in"},
     ];
   return (
     <>
