@@ -698,12 +698,13 @@ th {
 /* Pronites */
 
 .pronites-container {
-  min-height: 100dvh;
+  /* min-height: 100dvh; */
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Bangers', serif;
   gap: 3rem;
+  padding-top: 5rem;
   /* padding-top: 7rem; */
   /* flex-wrap: wrap; */
   flex-direction: column;
