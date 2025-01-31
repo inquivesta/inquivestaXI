@@ -708,27 +708,31 @@ const Register = () => {
           ),
         },
         {
-          name: "amt1",
-          renderOn: "Single",
-          ele: information("Amount payable: INR 500"),
+          name: "amt",
+          ele: information("Registrations are Free Till Monday !! Just fill your email in the UTR field."),
         },
-        {
-          name: "amt2",
-          renderOn: "Double",
-          ele: information("Amount payable: INR 900"),
-        },
-        {
-          name: "qr",
-          ele: (
-            <Qrcode
-              images={[
-                "/payments/qr-1.jpeg",
-                "/payments/qr-2.jpeg",
-                "/payments/qr-3.jpeg",
-              ]}
-            />
-          ),
-        },
+        // {
+        //   name: "amt1",
+        //   renderOn: "Single",
+        //   ele: information("Amount payable: INR 500"),
+        // },
+        // {
+        //   name: "amt2",
+        //   renderOn: "Double",
+        //   ele: information("Amount payable: INR 900"),
+        // },
+        // {
+        //   name: "qr",
+        //   ele: (
+        //     <Qrcode
+        //       images={[
+        //         "/payments/qr-1.jpeg",
+        //         "/payments/qr-2.jpeg",
+        //         "/payments/qr-3.jpeg",
+        //       ]}
+        //     />
+        //   ),
+        // },
         {
           name: "utr",
           ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
