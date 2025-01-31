@@ -1351,7 +1351,7 @@ const Register = () => {
         {
           name: "amt1",
           renderOn: "1",
-          ele: information("Registration fees: 150 INR"),
+          ele: information("Registration fees: 39 INR"),
         },
         {
           name: "qr",
