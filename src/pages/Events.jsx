@@ -3,6 +3,9 @@ import Navbar from '../components/Navbar'
 import EventsWrapper from '../components/EventsWrapper';
 
 const Events = () => {
+    const pronites = [
+        {name: "Day 1 (8th Feb)", details: "Get ready for an unforgettable evening at IISER Kolkata’s Inquivesta Pronites, where music, energy, and excitement collide! Brace yourself as a sensational artist takes the stage, delivering a high-voltage performance that will leave you mesmerized. With dazzling lights, pulsating beats, and an electrifying atmosphere, this is the ultimate night to dance, sing, and celebrate. Whether you're a music lover or just looking for an exhilarating experience, Inquivesta Pronites promises a night of pure magic and memories that will last a lifetime. Don't miss out on the biggest musical extravaganza of the year!", register: "https://allevents.in/kalyani/inquivesta-pronite-8th-feb/80004785447484"}
+    ]
     const core = [
         {name: "CSI", register: "", details: ["Dive into the thrilling world of ",<strong>C</strong>,"rime ",<strong>S</strong>,"cene ",<strong>I</strong> ,"nvestigation at INQUIVESTA, the ultimate college fest! Step into the shoes of a detective as you unravel clues, interrogate suspects, and piece together evidence to crack a mind-bending mystery. Whether you're a true-crime enthusiast or just looking for an adrenaline-packed challenge, this event promises to test your logic, teamwork, and investigative skills. Get ready to think fast, act smart, and solve the unsolvable—because the case won't crack itself! This event is meant to test your deductive skills, you can expect questions based on general science, logic, reasoning in the context of the crime scenes, it shall also test your judgement in deciphering what is the true nature of the crime and not fall for the illusions and traps in front of you."]},
         {name: "Soulbeats", register: "#/register/Soulbeats", details: [<p className='t-left'>Two-day dance event comprising:</p>, <ul className='t-left'><li>Stage dance competition: 'Xpress' ( Theme - Energy)</li> <li>Dance battle : 'Survival of the fittest'</li>  <li>Insta Reel-in (Theme : Innovation) Workshop and meet-and-greet with guest artist</li></ul>]},
@@ -36,6 +39,7 @@ const Events = () => {
     <>
     <Navbar active="events"/>
     <div className='main-content darkbg events-cont'>
+        <EventsWrapper eventsArray={pronites} category="Pronites"/>
         <EventsWrapper eventsArray={core} category="Core"/>
         <EventsWrapper eventsArray={science} category="Science"/>
         <EventsWrapper eventsArray={cultural} category="Cultural"/>
