@@ -14,6 +14,7 @@ import Register from "./pages/Register";
 import EventLogin from "./pages/EventLogin";
 import Registrations from "./pages/Registrations";
 import Timeline from "./pages/Timeline";
+import Pronites from "./pages/Pronites";
 
 const router = createHashRouter([
   {
@@ -64,6 +65,10 @@ const router = createHashRouter([
     path: "/timeline",
     element: <Timeline />
   },
+  {
+    path: "/pronites",
+    element: <Pronites />,
+  }
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
