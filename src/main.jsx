@@ -38,7 +38,7 @@ const router = createHashRouter([
   },
   {
     path: "/schedule",
-    element: <Schedule />,
+    element: <Timeline />,
   },
   {
     path: "/team",

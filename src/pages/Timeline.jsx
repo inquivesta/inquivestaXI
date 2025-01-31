@@ -63,7 +63,7 @@ const schedule = [
     location: "",
   },
   {
-    event: "Prom Night",
+    event: "Cultural Programme",
     time: "09:00 pm",
     details: "LHC Courtyard",
     location: "LHC"
