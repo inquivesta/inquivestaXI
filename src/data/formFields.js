@@ -486,6 +486,9 @@ var eventForms = {
       {
         name: "member2", 
       },
+      {
+        name: "member3", 
+      },
       {        
         name: "utr", 
       },

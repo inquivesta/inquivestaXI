@@ -1540,8 +1540,16 @@ const Register = () => {
         {
           name: "member2",
           ele: textarea(
-            "Enter name of second member",
+            "Enter name of second member (write N/A if not available)",
             "member2",
+            "Name of second team member"
+          ),
+        },
+        {
+          name: "member3",
+          ele: textarea(
+            "Enter name of third member (write N/A if not available)",
+            "member3",
             "Name of second team member"
           ),
         },
@@ -1550,9 +1558,9 @@ const Register = () => {
           ele: information([
             "Registration fees:",
             <br />,
-            "49 INR per team (non-IISER K participants)",
+            "149 INR per team (non-IISER K participants)",
             <br />,
-            "29 INR per team (IISER K participants) ",
+            "99 INR per team (IISER K participants) ",
           ]),
         },
         {
