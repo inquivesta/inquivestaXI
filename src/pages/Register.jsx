@@ -1021,7 +1021,12 @@ const Register = () => {
     LOST: {
       formTitle: "Land Of Secret Treasures (LOST)",
       form: [
+        { name: "no-reg",
+          ele: information("Registrations have been closed for IISER Kolkata students.")
+
+        },
         ...defaultForm,
+        "institute",
         {
           name: "team-name",
           ele: textarea("Team Name", "team-name", "Enter your Team Name"),
