@@ -445,7 +445,7 @@ var eventForms = {
     formTitle: "Beat The Drop",
     form: [
       ...defaultForm,
-      "insitute",
+      "institute",
       {
         name: "team-name",
       },
