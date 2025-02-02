@@ -419,7 +419,7 @@ var eventForms = {
     formTitle: "Recycled Runway",
     form: [
       ...defaultForm,
-      "insitute",
+      "institute",
       {
         name: "team-name",
       },

@@ -1428,7 +1428,7 @@ const Register = () => {
       formTitle: "Recycled Runway",
       form: [
         ...defaultForm,
-        "insitute",
+        "institute",
         {
           name: "team-name",
           ele: textarea("Team Name", "team-name", "Enter your Team Name"),
