@@ -13,8 +13,10 @@ const Registrations = () => {
   const [uname, setUname] = useState("");
   // const [token, setToken] = useState("");
   const [qrCode, setQrCode] = useState(null);
+  const [searchResult, setSearchResult] = useState({});
   
   const changeScan = () => {
+      // setSearchResult(null);
       setIsScanning(!isScanning);
   }
 
@@ -108,6 +110,26 @@ const Registrations = () => {
       // console.log(eventData);
     }
   }, []);
+  const searchUTR = (utr) => {
+    // console.log(utr);
+    permEvents.map((event) => {
+      Object.keys(eventData[event]).map((key) => {
+        // console.log("Recieved: ", eventData[event][key].utr);
+        // console.log("Scanned: ", utr);
+        if (eventData[event][key].utr == utr) {
+          setSearchResult(eventData[event][key]);
+          console.log("found");
+          // setSearchResult(eventData[event][key].utr);
+          // console.log(searchResult)
+          return;
+        } 
+      })
+      return;
+    });
+    // if (!searchResult) {
+    //   setSearchResult("No matched found.");
+    // }
+  };
   if (login) {
     if (permEvents) {
       if (!eventData) {
@@ -119,8 +141,27 @@ const Registrations = () => {
           return (
             <div className="scanner">
                     <button onClick={changeScan}>Stop Scan</button>
-                 {isScanning && <Scanner onScan={(result) => {console.log(result); setQrCode(result)}} allowMultiple={true} />}
-                    {qrCode && <p>{qrCode[0].rawValue}</p>}
+                 {isScanning && 
+                 <div className="scanner-container">
+                    <Scanner onScan={(result) => {searchUTR(result[0].rawValue); setQrCode(result)}} allowMultiple={true} />
+                 </div>
+                 }
+                    {searchResult && 
+                      
+                        // JSON.stringify(searchResult)
+                        // console.log(searchResult)
+                        <span className="search-res">
+                        {
+                          Object.keys(searchResult).map((k) => (
+                            <>
+                              <strong key={k}>{k}</strong>
+                              <p key={p + 'tet'}>{searchResult[k]}</p>
+                            </>
+                          ))
+                        }
+                        </span>
+                      
+                    }
             </div>
           )
         } else {  

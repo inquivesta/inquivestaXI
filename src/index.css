@@ -760,6 +760,25 @@ th {
   background-size: contain;
   background-repeat: no-repeat;
 }
+/* Search Query */
+.scanner-container {
+  width: 100vw;
+  max-width: 100ch;
+  aspect-ratio: 1;
+  padding: 1rem;
+
+}
+.scanner-container > div {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.scanner-container > div > canvas {
+  /* all: unset; */
+  max-width: 100%;
+  position: relative !important;
+}
+
 /* Media Queries */
 @media (max-width: 500px) {
   .artist-card {
@@ -1342,7 +1361,3 @@ iframe {
       padding: 20px;
     }
   }
-
-.scanner {
-  width: 50%;
-}
