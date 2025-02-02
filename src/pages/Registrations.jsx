@@ -11,6 +11,28 @@ const Registrations = () => {
   // const [token, setToken] = useState("");
   const navigate = useNavigate();
 
+  const sortFunction = (data) => {
+    // Object.keys(someJSON)
+    var arr = {};
+    var jsonArr = {};
+    permEvents.map((event) => {
+      arr[event] = [];
+      jsonArr[event] = {};
+      Object.keys(eventData[event]).map((doc) => {
+        arr[event].push(eventData[event][doc]);
+      });
+      arr[event].sort((a, b) => a.timestamp - b.timestamp);
+    });
+    permEvents.map((event) => {
+      arr[event].map((e, i) => {
+        jsonArr[event][i] = e;
+      });
+    });
+    // console.log(arr);
+    console.log(jsonArr);
+    seteventData(jsonArr);
+  };
+
   const getEventsData = async (username, sessionCookie) => {
     const holder = { username: username, sessionCookie: sessionCookie };
     try {
@@ -30,6 +52,7 @@ const Registrations = () => {
       setlogin(data.status);
       setpermEvents(data.events.split(","));
       seteventData(data.eventData);
+      // await sortFunction(data.eventData);
     } catch (error) {
       console.error("Error posting data:", error);
       alert("An Error Occurred. Please Try Again.");
@@ -58,6 +81,7 @@ const Registrations = () => {
   //     alert("An Error Occurred. Please Try Again.");
   //   }
   // };
+
   const logout = () => {
     Cookies.remove("inquivestaUsername");
     Cookies.remove("inquivestaToken");
@@ -70,7 +94,9 @@ const Registrations = () => {
     // setToken(sessionCookie);
     if (username) {
       // cookielogin(username, sessionCookie);
-      getEventsData(username, sessionCookie);
+      getEventsData(username, sessionCookie)
+        // .then(sortFunction(eventData));
+      // console.log(eventData);
     }
   }, []);
   if (login) {
@@ -78,14 +104,21 @@ const Registrations = () => {
       if (!eventData) {
         return <h1>Loading Data...</h1>;
       } else {
-        // console.log(eventData);
+        // console.log(eventData[permEvents[0]]);
+        // sortFunction(eventData);
+
         return (
           <>
-            <span>Logged in as: {uname}<button onClick={logout}>Logout</button></span>
+            <span>
+              Logged in as: {uname}
+              <button onClick={logout}>Logout</button>
+            </span>
             {permEvents
               ? permEvents.map((event, i) => (
                   <div key={i} className="table-container">
-                    <h2 className="table-title">{eventForms[event].formTitle}</h2>
+                    <h2 className="table-title">
+                      {eventForms[event].formTitle}
+                    </h2>
                     <table>
                       <thead>
                         <tr>
@@ -97,23 +130,33 @@ const Registrations = () => {
                           ))}
                         </tr>
                       </thead>
-                      {eventData[event] &&
-                      <tbody>
-                        {
-                          Object.keys(eventData[event]).map((e, k) => (
+                      {eventData[event] && (
+                        <tbody>
+                          {Object.keys(eventData[event]).map((e, k) => (
                             <tr key={e}>
                               <td>{k + 1}</td>
-                              {
-                                eventForms[event].form.map((field, j) => (
-                                  <td key={`${event}${j}`}>{eventData[event][e][field.name ? field.name : field] ? (field.valueMap ? field.valueMap[eventData[event][e][field.name ? field.name : field]] : eventData[event][e][field.name ? field.name : field]) : "-"}</td>
-                                  // <td key={`${event}${j}`}>{eventData[event][e][field]}</td>
-                                ))
-                              }
+                              {eventForms[event].form.map((field, j) => (
+                                <td key={`${event}${j}`}>
+                                  {eventData[event][e][
+                                    field.name ? field.name : field
+                                  ]
+                                    ? field.valueMap
+                                      ? field.valueMap[
+                                          eventData[event][e][
+                                            field.name ? field.name : field
+                                          ]
+                                        ]
+                                      : eventData[event][e][
+                                          field.name ? field.name : field
+                                        ]
+                                    : "-"}
+                                </td>
+                                // <td key={`${event}${j}`}>{eventData[event][e][field]}</td>
+                              ))}
                             </tr>
-                          ))
-                        }
-                      </tbody>
-                      }
+                          ))}
+                        </tbody>
+                      )}
                     </table>
                   </div>
                 ))
