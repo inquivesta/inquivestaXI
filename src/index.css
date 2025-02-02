@@ -1342,3 +1342,7 @@ iframe {
       padding: 20px;
     }
   }
+
+.scanner {
+  width: 50%;
+}

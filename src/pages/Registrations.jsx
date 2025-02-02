@@ -2,13 +2,22 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { eventForms } from "../data/formFields";
+import { Scanner } from '@yudiel/react-qr-scanner';
+
 
 const Registrations = () => {
+  const [isScanning, setIsScanning] = useState(false);
   const [login, setlogin] = useState(false);
   const [permEvents, setpermEvents] = useState(null);
   const [eventData, seteventData] = useState(null);
   const [uname, setUname] = useState("");
   // const [token, setToken] = useState("");
+  const [qrCode, setQrCode] = useState(null);
+  
+  const changeScan = () => {
+      setIsScanning(!isScanning);
+  }
+
   const navigate = useNavigate();
 
   const sortFunction = (data) => {
@@ -104,14 +113,24 @@ const Registrations = () => {
       if (!eventData) {
         return <h1>Loading Data...</h1>;
       } else {
-        // console.log(eventData[permEvents[0]]);
+        // console.log(eventData);
         // sortFunction(eventData);
-
+        if (isScanning) {
+          return (
+            <div className="scanner">
+                    <button onClick={changeScan}>Stop Scan</button>
+                 {isScanning && <Scanner onScan={(result) => {console.log(result); setQrCode(result)}} allowMultiple={true} />}
+                    {qrCode && <p>{qrCode[0].rawValue}</p>}
+            </div>
+          )
+        } else {  
         return (
           <>
             <span>
               Logged in as: {uname}
               <button onClick={logout}>Logout</button>
+              <button onClick={changeScan}>Scan</button>
+
             </span>
             {permEvents
               ? permEvents.map((event, i) => (
@@ -163,7 +182,7 @@ const Registrations = () => {
               : ""}
           </>
         );
-      }
+      } }
     } else {
       return (
         <>
