@@ -1483,7 +1483,7 @@ const Register = () => {
       formTitle: "Beat The Drop",
       form: [
         ...defaultForm,
-        "insitute",
+        "institute",
         {
           name: "team-name",
           ele: textarea("Enter team name", "team-name", "Team name"),
