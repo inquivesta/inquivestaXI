@@ -108,22 +108,22 @@ const Register = () => {
             changeDropDown
           ),
         },
-        {
-          name: "thirdCommitteePref",
-          ele: dropdown(
-            "Third Committee Preference",
-            "thirdCommitteePref",
-            [
-              "",
-              "UNHRC",
-              // "UNSC",
-              "Historic Lok Sabha",
-              // "IPC - Journalism",
-              // "IPC - Photojournalism",
-            ],
-            changeDropDown
-          ),
-        },
+        // {
+        //   name: "thirdCommitteePref",
+        //   ele: dropdown(
+        //     "Third Committee Preference",
+        //     "thirdCommitteePref",
+        //     [
+        //       "",
+        //       "UNHRC",
+        //       // "UNSC",
+        //       "Historic Lok Sabha",
+        //       // "IPC - Journalism",
+        //       // "IPC - Photojournalism",
+        //     ],
+        //     changeDropDown
+        //   ),
+        // },
         {
           name: "countryUNHRC",
           renderOn: "UNHRC",
