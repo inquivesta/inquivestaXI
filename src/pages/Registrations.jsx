@@ -2,13 +2,24 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { eventForms } from "../data/formFields";
+import { Scanner } from '@yudiel/react-qr-scanner';
+
 
 const Registrations = () => {
+  const [isScanning, setIsScanning] = useState(false);
   const [login, setlogin] = useState(false);
   const [permEvents, setpermEvents] = useState(null);
   const [eventData, seteventData] = useState(null);
   const [uname, setUname] = useState("");
   // const [token, setToken] = useState("");
+  const [qrCode, setQrCode] = useState(null);
+  const [searchResult, setSearchResult] = useState({});
+  
+  const changeScan = () => {
+      // setSearchResult(null);
+      setIsScanning(!isScanning);
+  }
+
   const navigate = useNavigate();
 
   const sortFunction = (data) => {
@@ -99,19 +110,68 @@ const Registrations = () => {
       // console.log(eventData);
     }
   }, []);
+  const searchUTR = (utr) => {
+    // console.log(utr);
+    permEvents.map((event) => {
+      Object.keys(eventData[event]).map((key) => {
+        // console.log("Recieved: ", eventData[event][key].utr);
+        // console.log("Scanned: ", utr);
+        if (eventData[event][key].utr == utr) {
+          setSearchResult(eventData[event][key]);
+          console.log("found");
+          // setSearchResult(eventData[event][key].utr);
+          // console.log(searchResult)
+          return;
+        } 
+      })
+      return;
+    });
+    // if (!searchResult) {
+    //   setSearchResult("No matched found.");
+    // }
+  };
   if (login) {
     if (permEvents) {
       if (!eventData) {
         return <h1>Loading Data...</h1>;
       } else {
-        // console.log(eventData[permEvents[0]]);
+        // console.log(eventData);
         // sortFunction(eventData);
-
+        if (isScanning) {
+          return (
+            <div className="scanner">
+                    <button onClick={changeScan}>Stop Scan</button>
+                 {isScanning && 
+                 <div className="scanner-container">
+                    <Scanner onScan={(result) => {searchUTR(result[0].rawValue); setQrCode(result)}} allowMultiple={true} />
+                 </div>
+                 }
+                    {searchResult && 
+                      
+                        // JSON.stringify(searchResult)
+                        // console.log(searchResult)
+                        <span className="search-res">
+                        {
+                          Object.keys(searchResult).map((k) => (
+                            <>
+                              <strong key={k}>{k}</strong>
+                              <p key={p + 'tet'}>{searchResult[k]}</p>
+                            </>
+                          ))
+                        }
+                        </span>
+                      
+                    }
+            </div>
+          )
+        } else {  
         return (
           <>
             <span>
               Logged in as: {uname}
               <button onClick={logout}>Logout</button>
+              <button onClick={changeScan}>Scan</button>
+
             </span>
             {permEvents
               ? permEvents.map((event, i) => (
@@ -163,7 +223,7 @@ const Registrations = () => {
               : ""}
           </>
         );
-      }
+      } }
     } else {
       return (
         <>

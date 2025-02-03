@@ -15,6 +15,7 @@ import EventLogin from "./pages/EventLogin";
 import Registrations from "./pages/Registrations";
 import Timeline from "./pages/Timeline";
 import Pronites from "./pages/Pronites";
+import QrScanner from "./pages/QrScanner";
 
 const router = createHashRouter([
   {
@@ -68,6 +69,10 @@ const router = createHashRouter([
   {
     path: "/pronites",
     element: <Pronites />,
+  },
+  {
+    path: "/verify",
+    element: <QrScanner />,
   }
 ]);
 createRoot(document.getElementById("root")).render(
