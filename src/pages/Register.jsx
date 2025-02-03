@@ -1511,6 +1511,7 @@ const Register = () => {
     //   formTitle: "Thrust",
     //   form: [
     //     ...defaultForm,
+    //     { name: "rest", ele: information("Registration has been closed for IISER-K students") },
     //     "institute",
     //     {
     //       name: "teamname",
