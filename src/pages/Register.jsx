@@ -1507,37 +1507,37 @@ const Register = () => {
         },
       ],
     },
-    Thrust: {
-      formTitle: "Thrust",
-      form: [
-        ...defaultForm,
-        { name: "rest", ele: information("Registration has been closed for IISER-K students") },
-        "institute",
-        {
-          name: "teamname",
-          ele: textarea("Team Name", "teamname", "Team Name"),
-        },
-        { name: "leader", ele: information("The person registering will be considered the Team Leader") },
-        {
-          name: "members",
-          ele: textarea(
-            "Other Team Members (2 - 4)",
-            "members",
-            "Total team members (3 - 5)"
-          ),
-        },
-        {
-          name: "ownBottle",
-          ele: radio(
-            "Can you manage your own 2L Bottle",
-            "ownBottle",
-            ["Yes", "No"],
-            changeDropDown
-          ),
-        },
-        { name: "amt", ele: information("This event has no registration Fees!") },
-      ],
-    },
+    // Thrust: {
+    //   formTitle: "Thrust",
+    //   form: [
+    //     ...defaultForm,
+    //     { name: "rest", ele: information("Registration has been closed for IISER-K students") },
+    //     "institute",
+    //     {
+    //       name: "teamname",
+    //       ele: textarea("Team Name", "teamname", "Team Name"),
+    //     },
+    //     { name: "leader", ele: information("The person registering will be considered the Team Leader") },
+    //     {
+    //       name: "members",
+    //       ele: textarea(
+    //         "Other Team Members (2 - 4)",
+    //         "members",
+    //         "Total team members (3 - 5)"
+    //       ),
+    //     },
+    //     {
+    //       name: "ownBottle",
+    //       ele: radio(
+    //         "Can you manage your own 2L Bottle",
+    //         "ownBottle",
+    //         ["Yes", "No"],
+    //         changeDropDown
+    //       ),
+    //     },
+    //     { name: "amt", ele: information("This event has no registration Fees!") },
+    //   ],
+    // },
     GNQ: {
       formTitle: "GNQ",
       form: [
