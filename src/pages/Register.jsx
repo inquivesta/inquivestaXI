@@ -1018,91 +1018,91 @@ const Register = () => {
     //   {name: "qr", ele: <Qrcode images={["/payments/qr-1.jpeg", "/payments/qr-2.jpeg", "/payments/qr-3.jpeg"]}/>},
     //   {name: "utr", ele: textarea("Enter full UTR number", "utr", "UTR goes here")},
     // ]},
-    LOST: {
-      formTitle: "Land Of Secret Treasures (LOST)",
-      form: [
-        { name: "no-reg",
-          ele: information("Registrations have been closed for IISER Kolkata students.")
+    // LOST: {
+    //   formTitle: "Land Of Secret Treasures (LOST)",
+    //   form: [
+    //     { name: "no-reg",
+    //       ele: information("Registrations have been closed for IISER Kolkata students.")
 
-        },
-        ...defaultForm,
-        "institute",
-        {
-          name: "team-name",
-          ele: textarea("Team Name", "team-name", "Enter your Team Name"),
-        },
-        {
-          name: "member1",
-          ele: textarea(
-            "Team Member 2's Name",
-            "member1",
-            "Name of your other team member goes here"
-          ),
-        },
-        {
-          name: "member1email",
-          ele: textarea(
-            "Team Member 2's email",
-            "member1email",
-            "Email Addr. of your other team member goes here"
-          ),
-        },
-        {
-          name: "member2",
-          ele: textarea(
-            "Team Member 3's Name",
-            "member2",
-            "Name of your other team member goes here"
-          ),
-        },
-        {
-          name: "member2email",
-          ele: textarea(
-            "Team Member 3's email",
-            "member2email",
-            "Email Addr. of your other team member goes here"
-          ),
-        },
-        {
-          name: "member3",
-          ele: textarea(
-            "Team Member 4's Name",
-            "member3",
-            "Name of your other team member goes here"
-          ),
-        },
-        {
-          name: "member3email",
-          ele: textarea(
-            "Team Member 4's email",
-            "member3email",
-            "Email Addr. of your other team member goes here"
-          ),
-        },
-        {
-          name: "amt",
-          ele: information(
-            "Amount Payable: INR 150 (INR 50 Off. for IISER Kolkata Students)"
-          ),
-        },
-        {
-          name: "qr",
-          ele: (
-            <Qrcode
-              images={[
-                "/payments/qr-1.jpeg",
-                "/payments/qr-2.jpeg",
-                "/payments/qr-3.jpeg",
-              ]}
-            />
-          ),
-        },
-        {
-          name: "utr",
-          ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
-        },
-      ],
-    },
+    //     },
+    //     ...defaultForm,
+    //     "institute",
+    //     {
+    //       name: "team-name",
+    //       ele: textarea("Team Name", "team-name", "Enter your Team Name"),
+    //     },
+    //     {
+    //       name: "member1",
+    //       ele: textarea(
+    //         "Team Member 2's Name",
+    //         "member1",
+    //         "Name of your other team member goes here"
+    //       ),
+    //     },
+    //     {
+    //       name: "member1email",
+    //       ele: textarea(
+    //         "Team Member 2's email",
+    //         "member1email",
+    //         "Email Addr. of your other team member goes here"
+    //       ),
+    //     },
+    //     {
+    //       name: "member2",
+    //       ele: textarea(
+    //         "Team Member 3's Name",
+    //         "member2",
+    //         "Name of your other team member goes here"
+    //       ),
+    //     },
+    //     {
+    //       name: "member2email",
+    //       ele: textarea(
+    //         "Team Member 3's email",
+    //         "member2email",
+    //         "Email Addr. of your other team member goes here"
+    //       ),
+    //     },
+    //     {
+    //       name: "member3",
+    //       ele: textarea(
+    //         "Team Member 4's Name",
+    //         "member3",
+    //         "Name of your other team member goes here"
+    //       ),
+    //     },
+    //     {
+    //       name: "member3email",
+    //       ele: textarea(
+    //         "Team Member 4's email",
+    //         "member3email",
+    //         "Email Addr. of your other team member goes here"
+    //       ),
+    //     },
+    //     {
+    //       name: "amt",
+    //       ele: information(
+    //         "Amount Payable: INR 150 (INR 50 Off. for IISER Kolkata Students)"
+    //       ),
+    //     },
+    //     {
+    //       name: "qr",
+    //       ele: (
+    //         <Qrcode
+    //           images={[
+    //             "/payments/qr-1.jpeg",
+    //             "/payments/qr-2.jpeg",
+    //             "/payments/qr-3.jpeg",
+    //           ]}
+    //         />
+    //       ),
+    //     },
+    //     {
+    //       name: "utr",
+    //       ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
+    //     },
+    //   ],
+    // },
     Basketball3v3: {
       formTitle: "3v3 Basketball",
       form: [
