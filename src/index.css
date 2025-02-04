@@ -761,6 +761,13 @@ th {
   background-repeat: no-repeat;
 }
 /* Search Query */
+.search-res {
+  background-color: #00ffff;
+  top: 10vh;
+  position: fixed;
+  z-index: 10;
+}
+
 .scanner-container {
   width: 100vw;
   max-width: 100ch;

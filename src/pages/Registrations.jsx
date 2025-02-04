@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { eventForms } from "../data/formFields";
-import { Scanner } from '@yudiel/react-qr-scanner';
-
+import { Scanner } from "@yudiel/react-qr-scanner";
 
 const Registrations = () => {
   const [isScanning, setIsScanning] = useState(false);
@@ -13,12 +12,12 @@ const Registrations = () => {
   const [uname, setUname] = useState("");
   // const [token, setToken] = useState("");
   const [qrCode, setQrCode] = useState(null);
-  const [searchResult, setSearchResult] = useState({});
-  
+  const [searchResult, setSearchResult] = useState(null);
+
   const changeScan = () => {
-      // setSearchResult(null);
-      setIsScanning(!isScanning);
-  }
+    // setSearchResult(null);
+    setIsScanning(!isScanning);
+  };
 
   const navigate = useNavigate();
 
@@ -105,8 +104,8 @@ const Registrations = () => {
     // setToken(sessionCookie);
     if (username) {
       // cookielogin(username, sessionCookie);
-      getEventsData(username, sessionCookie)
-        // .then(sortFunction(eventData));
+      getEventsData(username, sessionCookie);
+      // .then(sortFunction(eventData));
       // console.log(eventData);
     }
   }, []);
@@ -122,8 +121,8 @@ const Registrations = () => {
           // setSearchResult(eventData[event][key].utr);
           // console.log(searchResult)
           return;
-        } 
-      })
+        }
+      });
       return;
     });
     // if (!searchResult) {
@@ -140,90 +139,95 @@ const Registrations = () => {
         if (isScanning) {
           return (
             <div className="scanner">
-                    <button onClick={changeScan}>Stop Scan</button>
-                 {isScanning && 
-                 <div className="scanner-container">
-                    <Scanner onScan={(result) => {searchUTR(result[0].rawValue); setQrCode(result)}} allowMultiple={true} />
-                 </div>
-                 }
-                    {searchResult && 
-                      
-                        // JSON.stringify(searchResult)
-                        // console.log(searchResult)
-                        <span className="search-res">
-                        {
-                          Object.keys(searchResult).map((k) => (
-                            <>
-                              <strong key={k}>{k}</strong>
-                              <p key={p + 'tet'}>{searchResult[k]}</p>
-                            </>
-                          ))
-                        }
-                        </span>
-                      
-                    }
-            </div>
-          )
-        } else {  
-        return (
-          <>
-            <span>
-              Logged in as: {uname}
-              <button onClick={logout}>Logout</button>
-              <button onClick={changeScan}>Scan</button>
+              <button onClick={changeScan}>Stop Scan</button>
 
-            </span>
-            {permEvents
-              ? permEvents.map((event, i) => (
-                  <div key={i} className="table-container">
-                    <h2 className="table-title">
-                      {eventForms[event].formTitle}
-                    </h2>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          {eventForms[event].form.map((e, j) => (
-                            <th key={`heading${event}${j}`}>
-                              {e.name ? (e.label ? e.label : e.name) : e}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      {eventData[event] && (
-                        <tbody>
-                          {Object.keys(eventData[event]).map((e, k) => (
-                            <tr key={e}>
-                              <td>{k + 1}</td>
-                              {eventForms[event].form.map((field, j) => (
-                                <td key={`${event}${j}`}>
-                                  {eventData[event][e][
-                                    field.name ? field.name : field
-                                  ]
-                                    ? field.valueMap
-                                      ? field.valueMap[
-                                          eventData[event][e][
+              {searchResult && (
+                // JSON.stringify(searchResult)
+                // console.log(searchResult)
+                <span className="search-res">
+                  <strong>Scanned Data:</strong>
+                  <br />
+                  {Object.keys(searchResult).map((k) => (
+                    <>
+                      <strong key={k}>{k}</strong>
+                      <p key={k + "tet"}>{searchResult[k]}</p>
+                    </>
+                  ))}
+                </span>
+              )}
+              {isScanning && (
+                <div className="scanner-container">
+                  <Scanner
+                    onScan={(result) => {
+                      searchUTR(result[0].rawValue);
+                      setQrCode(result);
+                    }}
+                    allowMultiple={true}
+                  />
+                </div>
+              )}
+            </div>
+          );
+        } else {
+          return (
+            <>
+              <span>
+                Logged in as: {uname}
+                <button onClick={logout}>Logout</button>
+                <button onClick={changeScan}>Scan</button>
+              </span>
+              {permEvents
+                ? permEvents.map((event, i) => (
+                    <div key={i} className="table-container">
+                      <h2 className="table-title">
+                        {eventForms[event].formTitle}
+                      </h2>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            {eventForms[event].form.map((e, j) => (
+                              <th key={`heading${event}${j}`}>
+                                {e.name ? (e.label ? e.label : e.name) : e}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        {eventData[event] && (
+                          <tbody>
+                            {Object.keys(eventData[event]).map((e, k) => (
+                              <tr key={e}>
+                                <td>{k + 1}</td>
+                                {eventForms[event].form.map((field, j) => (
+                                  <td key={`${event}${j}`}>
+                                    {eventData[event][e][
+                                      field.name ? field.name : field
+                                    ]
+                                      ? field.valueMap
+                                        ? field.valueMap[
+                                            eventData[event][e][
+                                              field.name ? field.name : field
+                                            ]
+                                          ]
+                                        : eventData[event][e][
                                             field.name ? field.name : field
                                           ]
-                                        ]
-                                      : eventData[event][e][
-                                          field.name ? field.name : field
-                                        ]
-                                    : "-"}
-                                </td>
-                                // <td key={`${event}${j}`}>{eventData[event][e][field]}</td>
-                              ))}
-                            </tr>
-                          ))}
-                        </tbody>
-                      )}
-                    </table>
-                  </div>
-                ))
-              : ""}
-          </>
-        );
-      } }
+                                      : "-"}
+                                  </td>
+                                  // <td key={`${event}${j}`}>{eventData[event][e][field]}</td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        )}
+                      </table>
+                    </div>
+                  ))
+                : ""}
+            </>
+          );
+        }
+      }
     } else {
       return (
         <>
