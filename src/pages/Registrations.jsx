@@ -18,6 +18,7 @@ const Registrations = () => {
   const changeScan = () => {
     // setSearchResult(null);
     setIsScanning(!isScanning);
+    setSearchResult(null);
   };
 
   const navigate = useNavigate();
@@ -147,6 +148,8 @@ const Registrations = () => {
 
       const data = await response.json();
       console.log(data.message);
+      if(alert('Entry verified.')){}
+      else    window.location.reload(); 
       //   console.log(data["userdata"]);
       //   Cookies.set('inquivestaUsername', data.userdata.username, { expires: 10 });
       //   Cookies.set('inquivestaToken', data.userdata.token, { expires: 10 });
@@ -185,7 +188,7 @@ const Registrations = () => {
                       <p key={k + "tet"}>{searchResult[k]}</p>
                     </>
                   ))}
-                  <button onClick={verify}>Verify</button>
+                  <button onClick={verify} disabled={searchResult["verified"]}>Verify</button>
                 </span>
               )}
               {isScanning && (
@@ -205,9 +208,9 @@ const Registrations = () => {
           return (
             <>
               <span>
-                Logged in as: {uname}
-                <button onClick={logout}>Logout</button>
-                <button onClick={changeScan}>Scan</button>
+                Logged in as: {uname}<br/>
+                <button className = "clickable" onClick={logout}>Logout</button> 
+                <button className = "clickable" onClick={changeScan}>Scan</button>
               </span>
               {permEvents
                 ? permEvents.map((event, i) => (

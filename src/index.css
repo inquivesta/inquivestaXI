@@ -761,12 +761,28 @@ th {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.clickable {
+  padding: 5px;
+  margin: 5px;
+}
 /* Search Query */
 .search-res {
   background-color: #00ffff;
   top: 10vh;
   position: fixed;
+  padding: 20px;
   z-index: 10;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.search-res > button {
+  padding: 5px;
+}
+
+.search-res > p {
+  padding: 5px;
 }
 
 .scanner-container {
