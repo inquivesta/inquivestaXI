@@ -13,6 +13,7 @@ const Registrations = () => {
   // const [token, setToken] = useState("");
   const [qrCode, setQrCode] = useState(null);
   const [searchResult, setSearchResult] = useState(null);
+  const [verifyID, setverifyID] = useState("");
 
   const changeScan = () => {
     // setSearchResult(null);
@@ -117,6 +118,8 @@ const Registrations = () => {
         // console.log("Scanned: ", utr);
         if (eventData[event][key].utr == utr) {
           setSearchResult(eventData[event][key]);
+          setverifyID(key);
+          // console.log(key);
           console.log("found");
           // setSearchResult(eventData[event][key].utr);
           // console.log(searchResult)
@@ -129,6 +132,35 @@ const Registrations = () => {
     //   setSearchResult("No matched found.");
     // }
   };
+  const verify = async () => {
+    const username = Cookies.get("inquivestaUsername");
+    const sessionCookie = Cookies.get("inquivestaToken");
+    const holder = { username: username, sessionCookie: sessionCookie, docID: verifyID };
+    try {
+      const response = await fetch(import.meta.env.VITE_VERIFY, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(holder), // Send data as JSON
+      });
+
+      const data = await response.json();
+      console.log(data.message);
+      //   console.log(data["userdata"]);
+      //   Cookies.set('inquivestaUsername', data.userdata.username, { expires: 10 });
+      //   Cookies.set('inquivestaToken', data.userdata.token, { expires: 10 });
+      // alert(data.message);
+      // setlogin(data.status);
+      // setpermEvents(data.events.split(","));
+      // seteventData(data.eventData);
+      // await sortFunction(data.eventData);
+    } catch (error) {
+      console.error("Error posting data:", error);
+      alert("An Error Occurred. Please Try Again.");
+      // navigate("/eventlogin");
+    }
+  }
   if (login) {
     if (permEvents) {
       if (!eventData) {
@@ -153,6 +185,7 @@ const Registrations = () => {
                       <p key={k + "tet"}>{searchResult[k]}</p>
                     </>
                   ))}
+                  <button onClick={verify}>Verify</button>
                 </span>
               )}
               {isScanning && (
