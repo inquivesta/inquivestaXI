@@ -6,6 +6,12 @@ const Contact = () => {
     <>
     <Navbar active="contact"/>
     <div className='contact-container'>
+        <h1 className="glitch">Transport and Accomodation</h1>
+            <div className="transport-accomodation">
+                <p>Limited accomodation will be provided at a rate of <strong>200 INR per head per day</strong> on a first come first serve basis on the three days of the fest.</p> <br/>
+                <p>One bus will be running from <strong>Kolkata to the campus</strong> on all three days in the morning. The return journey will be provided only on <strong>the last day of the fest, 9th February</strong> before the pronites. Regular bus services to and from <strong>Kalyani Railway Station</strong> will also be provided on all three days. The detailed transport schedule will be updated soon.</p>
+            </div>
+
         <h1 className="glitch">Contact Info</h1>
         <div class="contact-links">
             <a href="mailto:inquivesta@iiserkol.ac.in" target='_blank' class="contact-link">

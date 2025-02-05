@@ -1004,6 +1004,9 @@ transition: opacity 0.3s, transform 0.3s;  /* Smooth show/hide transition */
   color: #ca711a;
 }
 .contact-links {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 15px;
   width: 90%;
   max-width: 30ch;
   display: flex;
@@ -1368,3 +1371,11 @@ iframe {
       padding: 20px;
     }
   }
+
+.transport-accomodation {
+  background-color: rgba(255, 255, 255, 0.6);
+  max-width: 80%;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: large;
+}
