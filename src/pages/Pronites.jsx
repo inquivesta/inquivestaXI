@@ -18,8 +18,8 @@ const Pronites = () => {
         <Fireflies />
         <Navbar active="pronites"/>
         <div className="pronites-container">
-            <ArtistGroup people={headliner} category="Headliner"/>
-            <ArtistGroup people={day2} category="Headliner"/>
+            <ArtistGroup people={headliner} category="Day 1"/>
+            <ArtistGroup people={day2} category="Day 2"/>
             {/* <ArtistGroup people={webdev} category="Web Development"/> */}
             <a className="merch-btn" href="#/events">Event Registrations</a>
             {/* <h2 className='glitch'>Stay tuned for more surprises!!</h2> */}
