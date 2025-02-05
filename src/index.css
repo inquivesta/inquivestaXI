@@ -705,6 +705,7 @@ th {
   font-family: 'Bangers', serif;
   gap: 3rem;
   padding-top: 5rem;
+  padding-bottom: 3rem;
   /* padding-top: 7rem; */
   /* flex-wrap: wrap; */
   flex-direction: column;
