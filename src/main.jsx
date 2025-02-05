@@ -35,7 +35,7 @@ const router = createHashRouter([
     element: <Sponsors />,
   },
   {
-    path: "/contact",
+    path: "/more",
     element: <Contact />,
   },
   {
