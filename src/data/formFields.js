@@ -520,6 +520,7 @@ var eventForms = {
   Soulbeats: {
     formTitle: "Soulbeats",
     form: [
+      ...defaultForm,
       "institute",
           {
             name: "subevent",
