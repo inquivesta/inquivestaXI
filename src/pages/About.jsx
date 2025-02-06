@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import { motion} from "motion/react"
+import { ScrollRestoration } from 'react-router-dom';
 
 const About = () => {
   return (
     <>
+        <ScrollRestoration />
         <Navbar active="about"/>
         <div className="main-content">
             <div className="container-1">
