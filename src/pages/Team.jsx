@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import TeamGroup from '../components/TeamGroup';
+import { ScrollRestoration } from 'react-router-dom';
 
 const Team = () => {
     const FC =[{name: "Abhratanu Ray", links: true, insta: "abhra_ray", pic: "abhra.jpg", mail: "ar22ms052@iiserkol.ac.in"}];
@@ -32,6 +33,7 @@ const Team = () => {
     ];
   return (
     <>
+        <ScrollRestoration />
         <Navbar active="team"/>
         <div className="team-container">
             <TeamGroup people={FC} category="Fest Coordinator"/>
