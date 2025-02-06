@@ -3,10 +3,12 @@ import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Timer from '../components/Timer'
+import { ScrollRestoration } from 'react-router-dom';
 
 const Home = () => {
   return (
     <>
+    <ScrollRestoration />
     <Navbar active=""/>
     <motion.div className="hero-section">
       <motion.img src="./logo.png" alt="" className="hero-img" 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import { details } from "motion/react-client";
+import { ScrollRestoration } from 'react-router-dom';
 
 const schedule = [
   {
@@ -293,6 +293,7 @@ const Timeline = () => {
 
   return (
     <>
+    <ScrollRestoration />
     <Navbar active="schedule"/>
     <div className="page-container">
       <div className="timeline-container">

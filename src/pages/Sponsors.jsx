@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import PastSponsors from "../components/PastSponsors"
 import CurrentSponsors from '../components/CurrentSponsors';
+import { ScrollRestoration } from 'react-router-dom';
 
 const Sponsors = () => {
     const sponsorsList = [
@@ -35,6 +36,7 @@ const Sponsors = () => {
       ];
   return (
     <>
+    <ScrollRestoration />
     <Navbar active="sponsors"/>
     <div className="sponsors">
         <CurrentSponsors sponsors={currSponsorsList}/>

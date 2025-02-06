@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import EventsWrapper from '../components/EventsWrapper';
+import { ScrollRestoration } from 'react-router-dom';
 
 const Events = () => {
     const pronites = [
@@ -38,6 +39,7 @@ const Events = () => {
     ];
   return (
     <>
+    <ScrollRestoration />
     <Navbar active="events"/>
     <div className='main-content darkbg events-cont'>
         <EventsWrapper eventsArray={pronites} category="Pronites"/>

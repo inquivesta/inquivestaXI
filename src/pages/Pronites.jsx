@@ -4,6 +4,7 @@ import TeamGroup from '../components/TeamGroup';
 import Fireflies from '../components/Fireflies';
 import ArtistGroup from '../components/ArtistGroup';
 import { color } from 'motion/react';
+import { ScrollRestoration } from 'react-router-dom';
 
 const Pronites = () => {
     const headliner = [
@@ -15,6 +16,7 @@ const Pronites = () => {
     ];
   return (
     <>
+        <ScrollRestoration />
         <Fireflies />
         <Navbar active="pronites"/>
         <div className="pronites-container">
