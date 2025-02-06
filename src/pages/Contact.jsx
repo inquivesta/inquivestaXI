@@ -1,9 +1,11 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import { ScrollRestoration } from 'react-router-dom';
 
 const Contact = () => {
   return (
     <>
+      <ScrollRestoration />
       <Navbar active="contact" />
       <div className="contact-container">
         <h1 className="glitch">Transport and Accomodation</h1>

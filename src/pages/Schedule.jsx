@@ -1,10 +1,12 @@
 import React from 'react'
 import { motion } from 'motion/react'
 import Navbar from '../components/Navbar'
+import { ScrollRestoration } from 'react-router-dom';
 
 const Schedule = () => {
   return (
     <>
+        <ScrollRestoration />
         <Navbar active="schedule"/>
         <motion.div className='schedule-container'
             initial={{opacity: 0}}

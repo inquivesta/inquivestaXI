@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar.jsx'
 import MerchImages from '../components/MerchImages.jsx';
+import { ScrollRestoration } from 'react-router-dom';
 
 const Merch = () => {
     const buyLink = "";
@@ -13,6 +14,7 @@ const Merch = () => {
     const showMerch = true;
   return (
     <>
+        <ScrollRestoration />
         <Navbar active="merch"/>
         <div className="merch-container">
             {showMerch ? 

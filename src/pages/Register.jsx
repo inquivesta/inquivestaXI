@@ -8,6 +8,7 @@ import Form, {
 } from "../components/Form.jsx";
 import Navbar from "../components/Navbar.jsx";
 import Qrcode from "../components/Qrcode.jsx";
+import { ScrollRestoration } from 'react-router-dom';
 // import eventForms from "../data/eventData.jsx";
 
 var defaultForm = ["name", "email", "phone"];
@@ -1780,6 +1781,7 @@ const Register = () => {
     if (renderkaro === 0) {
       return (
         <>
+          <ScrollRestoration />
           <Navbar />
           <div className="form-container">
             <h1 className="form-title">
@@ -1791,6 +1793,7 @@ const Register = () => {
     } else if (renderkaro === 1) {
       return (
         <>
+          <ScrollRestoration />
           <Navbar />
           <div className="form-container">
             <h1 className="form-title">
@@ -1821,6 +1824,7 @@ const Register = () => {
     } else if (renderkaro === 2) {
       return (
         <>
+          <ScrollRestoration />
           <Navbar />
           <div className="form-container">
             <h1 className="form-title">
@@ -1832,7 +1836,7 @@ const Register = () => {
       );
     }
   } else {
-    return <h1>Wrong Place BRAH!</h1>;
+    return <h1>Invalid Request !!</h1>;
   }
 };
 
