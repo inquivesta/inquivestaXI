@@ -40,7 +40,7 @@ const schedule = [
   },
   {
     event: "Art In A Culture",
-    time: "02:00 pm",
+    time: "01:00 pm",
     details: "Teaching Lab",
     location: "RC",
   },
@@ -135,7 +135,7 @@ const schedule = [
   },
   {
     event: "Art In A Culture",
-    time: "1:00 pm",
+    time: "10:00 am",
     details: "Teaching Lab",
     location: "RC",
   },
