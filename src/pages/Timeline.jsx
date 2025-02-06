@@ -14,6 +14,12 @@ const schedule = [
     details: "RNT Auditorium", 
     location: "RNT" 
   },
+  {
+    event: "Art In A Culture",
+    time: "01:00 pm",
+    details: "Teaching Lab",
+    location: "RC",
+  },
   { 
     event: "MUN'dane", 
     time: "02:00 pm", 
@@ -37,12 +43,6 @@ const schedule = [
     time: "02:00 pm", 
     details: "RNT Auditorium", 
     location: "RNT" 
-  },
-  {
-    event: "Art In A Culture",
-    time: "01:00 pm",
-    details: "Teaching Lab",
-    location: "RC",
   },
   {
     event: "Futsal",
