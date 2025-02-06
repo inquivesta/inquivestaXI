@@ -65,8 +65,8 @@ const schedule = [
   {
     event: "Cultural Programme",
     time: "09:00 pm",
-    details: "LHC Courtyard",
-    location: "LHC"
+    details: "RNT Auditorium",
+    location: "RNT"
   },
   {
     event: "February 8",
