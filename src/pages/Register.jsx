@@ -1104,97 +1104,97 @@ const Register = () => {
     //     },
     //   ],
     // },
-    Basketball3v3: {
-      formTitle: "3v3 Basketball",
-      form: [
-        ...defaultForm,
-        {
-          name: "team-name",
-          ele: textarea("Team Name", "team-name", "Enter your Team Name"),
-        },
-        {
-          name: "member0",
-          ele: textarea(
-            "Team Member 1's Name",
-            "member0",
-            "Name of first team member goes here"
-          ),
-        },
-        {
-          name: "member1",
-          ele: textarea(
-            "Team Member 2's Name",
-            "member1",
-            "Name of second team member goes here"
-          ),
-        },
-        {
-          name: "member2",
-          ele: textarea(
-            "Team Member 3's Name",
-            "member2",
-            "Name of third team member goes here"
-          ),
-        },
-        {
-          name: "member3",
-          ele: textarea(
-            "Team Member 4's Name (N/A if no 4th member)",
-            "member3",
-            "Name of fourthteam member goes here (N/A if no 4th member)"
-          ),
-        },
-        {
-          name: "accomodation",
-          ele: radio(
-            "Do you need accomodation on campus",
-            "accomodation",
-            ["Yes", "No"],
-            changeDropDown
-          ),
-        },
-        {
-          name: "female",
-          renderOn: "Yes",
-          ele: textarea(
-            "Number of female members to accomodate",
-            "female",
-            "0 if none"
-          ),
-        },
-        {
-          name: "male",
-          renderOn: "Yes",
-          ele: textarea(
-            "Number of male members to accomodate",
-            "male",
-            "0 if none"
-          ),
-        },
-        { name: "amt", ele: information("Amount Payable: INR 100") },
-        {
-          name: "amt_acco",
-          renderOn: "Yes",
-          ele: information("Accomodation amount will be collected on spot"),
-        },
-        {
-          name: "qr",
-          ele: (
-            <Qrcode
-              images={[
-                "/payments/qr-1.jpeg",
-                "/payments/qr-2.jpeg",
-                "/payments/qr-3.jpeg",
-              ]}
-            />
-          ),
-        },
-        {
-          name: "utr",
-          ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
-        },
-      ],
-    },
+    // Basketball3v3: {
+    //   formTitle: "3v3 Basketball",
+    //   form: [
+    //     ...defaultForm,
+    //     {
+    //       name: "team-name",
+    //       ele: textarea("Team Name", "team-name", "Enter your Team Name"),
+    //     },
+    //     {
+    //       name: "member0",
+    //       ele: textarea(
+    //         "Team Member 1's Name",
+    //         "member0",
+    //         "Name of first team member goes here"
+    //       ),
+    //     },
+    //     {
+    //       name: "member1",
+    //       ele: textarea(
+    //         "Team Member 2's Name",
+    //         "member1",
+    //         "Name of second team member goes here"
+    //       ),
+    //     },
+    //     {
+    //       name: "member2",
+    //       ele: textarea(
+    //         "Team Member 3's Name",
+    //         "member2",
+    //         "Name of third team member goes here"
+    //       ),
+    //     },
+    //     {
+    //       name: "member3",
+    //       ele: textarea(
+    //         "Team Member 4's Name (N/A if no 4th member)",
+    //         "member3",
+    //         "Name of fourthteam member goes here (N/A if no 4th member)"
+    //       ),
+    //     },
+    //     {
+    //       name: "accomodation",
+    //       ele: radio(
+    //         "Do you need accomodation on campus",
+    //         "accomodation",
+    //         ["Yes", "No"],
+    //         changeDropDown
+    //       ),
+    //     },
+    //     {
+    //       name: "female",
+    //       renderOn: "Yes",
+    //       ele: textarea(
+    //         "Number of female members to accomodate",
+    //         "female",
+    //         "0 if none"
+    //       ),
+    //     },
+    //     {
+    //       name: "male",
+    //       renderOn: "Yes",
+    //       ele: textarea(
+    //         "Number of male members to accomodate",
+    //         "male",
+    //         "0 if none"
+    //       ),
+    //     },
+    //     { name: "amt", ele: information("Amount Payable: INR 100") },
+    //     {
+    //       name: "amt_acco",
+    //       renderOn: "Yes",
+    //       ele: information("Accomodation amount will be collected on spot"),
+    //     },
+    //     {
+    //       name: "qr",
+    //       ele: (
+    //         <Qrcode
+    //           images={[
+    //             "/payments/qr-1.jpeg",
+    //             "/payments/qr-2.jpeg",
+    //             "/payments/qr-3.jpeg",
+    //           ]}
+    //         />
+    //       ),
+    //     },
+    //     {
+    //       name: "utr",
+    //       ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
+    //     },
+    //   ],
+    // },
 
     Photon: {
       formTitle: "Photon",
