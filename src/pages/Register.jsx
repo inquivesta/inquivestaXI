@@ -1196,85 +1196,85 @@ const Register = () => {
     //   ],
     // },
 
-    Photon: {
-      formTitle: "Photon",
-      form: [
-        ...defaultForm,
-        "institute",
-        {
-          name: "insta",
-          ele: textarea("Instagram ID", "insta", "N/A if not applicable"),
-        },
-        {
-          name: "subevent",
-          ele: dropdown(
-            "Select the event you want to participate in",
-            "subevent",
-            [
-              "",
-              { value: "1 acco", label: "Photo Story" },
-              { value: "2", label: "Theme Photography" },
-              { value: "3 acco", label: "Both" },
-            ],
-            changeDropDown
-          ),
-        },
-        {
-          name: "submission",
-          ele: textarea(
-            "Upload all your entries to a google drive folder and attach the link here. You can edit your entries till 6th Feb.",
-            "submission",
-            "Enter a google drive link to your submissions"
-          ),
-        },
-        {
-          name: "accomodation",
-          renderOn: "acco",
-          ele: radio(
-            "Do you need accomodation on campus for Photo Story",
-            "accomodation",
-            ["Yes", "No"],
-            changeDropDown
-          ),
-        },
-        {
-          name: "information",
-          renderOn: "Yes",
-          ele: information("Accomodation amount will be collected on spot"),
-        },
-        {
-          name: "amt1",
-          renderOn: "1",
-          ele: information("Amount Payable: INR 20"),
-        },
-        {
-          name: "amt2",
-          renderOn: "2",
-          ele: information("Amount Payable: INR 20"),
-        },
-        {
-          name: "amt3",
-          renderOn: "3",
-          ele: information("Amount Payable: INR 40"),
-        },
-        {
-          name: "qr",
-          ele: (
-            <Qrcode
-              images={[
-                "/payments/qr-1.jpeg",
-                "/payments/qr-2.jpeg",
-                "/payments/qr-3.jpeg",
-              ]}
-            />
-          ),
-        },
-        {
-          name: "utr",
-          ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
-        },
-      ],
-    },
+    // Photon: {
+    //   formTitle: "Photon",
+    //   form: [
+    //     ...defaultForm,
+    //     "institute",
+    //     {
+    //       name: "insta",
+    //       ele: textarea("Instagram ID", "insta", "N/A if not applicable"),
+    //     },
+    //     {
+    //       name: "subevent",
+    //       ele: dropdown(
+    //         "Select the event you want to participate in",
+    //         "subevent",
+    //         [
+    //           "",
+    //           { value: "1 acco", label: "Photo Story" },
+    //           { value: "2", label: "Theme Photography" },
+    //           { value: "3 acco", label: "Both" },
+    //         ],
+    //         changeDropDown
+    //       ),
+    //     },
+    //     {
+    //       name: "submission",
+    //       ele: textarea(
+    //         "Upload all your entries to a google drive folder and attach the link here. You can edit your entries till 6th Feb.",
+    //         "submission",
+    //         "Enter a google drive link to your submissions"
+    //       ),
+    //     },
+    //     {
+    //       name: "accomodation",
+    //       renderOn: "acco",
+    //       ele: radio(
+    //         "Do you need accomodation on campus for Photo Story",
+    //         "accomodation",
+    //         ["Yes", "No"],
+    //         changeDropDown
+    //       ),
+    //     },
+    //     {
+    //       name: "information",
+    //       renderOn: "Yes",
+    //       ele: information("Accomodation amount will be collected on spot"),
+    //     },
+    //     {
+    //       name: "amt1",
+    //       renderOn: "1",
+    //       ele: information("Amount Payable: INR 20"),
+    //     },
+    //     {
+    //       name: "amt2",
+    //       renderOn: "2",
+    //       ele: information("Amount Payable: INR 20"),
+    //     },
+    //     {
+    //       name: "amt3",
+    //       renderOn: "3",
+    //       ele: information("Amount Payable: INR 40"),
+    //     },
+    //     {
+    //       name: "qr",
+    //       ele: (
+    //         <Qrcode
+    //           images={[
+    //             "/payments/qr-1.jpeg",
+    //             "/payments/qr-2.jpeg",
+    //             "/payments/qr-3.jpeg",
+    //           ]}
+    //         />
+    //       ),
+    //     },
+    //     {
+    //       name: "utr",
+    //       ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
+    //     },
+    //   ],
+    // },
     Drama: {
       formTitle: "Drama",
       form: [
