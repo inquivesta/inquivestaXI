@@ -1396,3 +1396,51 @@ iframe {
   border-radius: 15px;
   font-size: large;
 }
+
+.transport-accomodation h2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+.transport-accomodation table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transport-accomodation thead {
+  background-color: #007bff;
+  color: white;
+}
+
+.transport-accomodation th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.transport-accomodation tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.transport-accomodation tbody tr:hover {
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 600px) {
+  .transport-accomodation table {
+      font-size: 14px;
+  }
+  .transport-accomodation th, td {
+      padding: 8px;
+  }
+}
