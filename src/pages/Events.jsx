@@ -35,7 +35,7 @@ const Events = () => {
         {name: "Chess", register: "#/register/Chess", details: "One day Rapid Open chess tournament "},
         {name: "Inquivesta Cube Open", register: "https://www.worldcubeassociation.org/competitions/InquivestaCubeOpen2025", details: "An official WCA competition with 8 events 2x2,3x3,4x4,5x5, Pyraminx, Megaminx, Clock, OH. Win exciting prices and coupons sponsored by The Cubeology!!"},
         {name: "Futsal", register:"#/register/Futsal", details: [<strong>5v5 Mixed Gender Futsal Tournament</strong>, <br/>, "Teams consist of 2 girls, 3 boys, 1 girl substitution, and 1 boy substitution. Each match features two 15-minute halves with a 5-minute break in between. The event will be of a knock-out format", <br/>,<br/>, <strong>Event Organisers:</strong>, <br/>, "Siba: 9556143435", <br/>, "Linupriya: 7815045556"]},
-        {name: "3x3 Basketball", register:"#/register/Basketball3v3", details: "3X3 Basketball Knouckout Showdown! Gameplay: 2 teams, 3 players each, 1 hoop. Score 21 points within 10 minutes or win in overtime! Who Can Play:Anyone, regardless of age or gender! How to Join: Register your team of 4(3+1 substitute)(Rs 100/- fee per team) on a first-come, first-served basis (limited to 20 teams)! Rules: Official FIBA 3X3 Basketball rules apply. Let's play!"},
+        {name: "3x3 Basketball", register:"", details: "3X3 Basketball Knouckout Showdown! Gameplay: 2 teams, 3 players each, 1 hoop. Score 21 points within 10 minutes or win in overtime! Who Can Play:Anyone, regardless of age or gender! How to Join: Register your team of 4(3+1 substitute)(Rs 100/- fee per team) on a first-come, first-served basis (limited to 20 teams)! Rules: Official FIBA 3X3 Basketball rules apply. Let's play!"},
     ];
   return (
     <>
