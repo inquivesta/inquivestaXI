@@ -741,46 +741,46 @@ const Register = () => {
       ],
     },
 
-    CSI: {
-      formTitle: "Crime Scene Investigation",
-      form: [
-        ...defaultForm,
-        "institute",
-        {
-          name: "members",
-          ele: textarea(
-            "Other Team Members (1 - 4)",
-            "members",
-            "Provide one to four names"
-          ),
-        },
-        {
-          name: "leader",
-          ele: textarea("Team Leader", "leader", "Name of a Team Leader"),
-        },
-        {
-          name: "teamname",
-          ele: textarea("Team Name", "teamname", "Team Name"),
-        },
-        { name: "amt", ele: information("Amount payable: INR 200") },
-        {
-          name: "qr",
-          ele: (
-            <Qrcode
-              images={[
-                "/payments/qr-1.jpeg",
-                "/payments/qr-2.jpeg",
-                "/payments/qr-3.jpeg",
-              ]}
-            />
-          ),
-        },
-        {
-          name: "utr",
-          ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
-        },
-      ],
-    },
+    // CSI: {
+    //   formTitle: "Crime Scene Investigation",
+    //   form: [
+    //     ...defaultForm,
+    //     "institute",
+    //     {
+    //       name: "members",
+    //       ele: textarea(
+    //         "Other Team Members (1 - 4)",
+    //         "members",
+    //         "Provide one to four names"
+    //       ),
+    //     },
+    //     {
+    //       name: "leader",
+    //       ele: textarea("Team Leader", "leader", "Name of a Team Leader"),
+    //     },
+    //     {
+    //       name: "teamname",
+    //       ele: textarea("Team Name", "teamname", "Team Name"),
+    //     },
+    //     { name: "amt", ele: information("Amount payable: INR 200") },
+    //     {
+    //       name: "qr",
+    //       ele: (
+    //         <Qrcode
+    //           images={[
+    //             "/payments/qr-1.jpeg",
+    //             "/payments/qr-2.jpeg",
+    //             "/payments/qr-3.jpeg",
+    //           ]}
+    //         />
+    //       ),
+    //     },
+    //     {
+    //       name: "utr",
+    //       ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
+    //     },
+    //   ],
+    // },
     // ART_IN_A_CULTURE: {
     //   formTitle: "Art In a Culture",
     //   form: [
