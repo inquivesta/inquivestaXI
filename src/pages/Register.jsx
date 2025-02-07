@@ -1539,55 +1539,55 @@ const Register = () => {
         { name: "amt", ele: information("This event has no registration Fees!") },
       ],
     },
-    GNQ: {
-      formTitle: "GNQ",
-      form: [
-        ...defaultForm,
-        "institute",
-        {
-          name: "member2",
-          ele: textarea(
-            "Enter name of second member (write N/A if not available)",
-            "member2",
-            "Name of second team member"
-          ),
-        },
-        {
-          name: "member3",
-          ele: textarea(
-            "Enter name of third member (write N/A if not available)",
-            "member3",
-            "Name of second team member"
-          ),
-        },
-        {
-          name: "amt",
-          ele: information([
-            "Registration fees:",
-            <br />,
-            "149 INR per team (non-IISER K participants)",
-            <br />,
-            "99 INR per team (IISER K participants) ",
-          ]),
-        },
-        {
-          name: "qr",
-          ele: (
-            <Qrcode
-              images={[
-                "/payments/qr-1.jpeg",
-                "/payments/qr-2.jpeg",
-                "/payments/qr-3.jpeg",
-              ]}
-            />
-          ),
-        },
-        {
-          name: "utr",
-          ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
-        },
-      ],
-    },
+    // GNQ: {
+    //   formTitle: "GNQ",
+    //   form: [
+    //     ...defaultForm,
+    //     "institute",
+    //     {
+    //       name: "member2",
+    //       ele: textarea(
+    //         "Enter name of second member (write N/A if not available)",
+    //         "member2",
+    //         "Name of second team member"
+    //       ),
+    //     },
+    //     {
+    //       name: "member3",
+    //       ele: textarea(
+    //         "Enter name of third member (write N/A if not available)",
+    //         "member3",
+    //         "Name of second team member"
+    //       ),
+    //     },
+    //     {
+    //       name: "amt",
+    //       ele: information([
+    //         "Registration fees:",
+    //         <br />,
+    //         "149 INR per team (non-IISER K participants)",
+    //         <br />,
+    //         "99 INR per team (IISER K participants) ",
+    //       ]),
+    //     },
+    //     {
+    //       name: "qr",
+    //       ele: (
+    //         <Qrcode
+    //           images={[
+    //             "/payments/qr-1.jpeg",
+    //             "/payments/qr-2.jpeg",
+    //             "/payments/qr-3.jpeg",
+    //           ]}
+    //         />
+    //       ),
+    //     },
+    //     {
+    //       name: "utr",
+    //       ele: textarea("Enter full UTR number", "utr", "UTR goes here"),
+    //     },
+    //   ],
+    // },
     Symphonix: {
       formTitle: "Symphonix",
       form: [
