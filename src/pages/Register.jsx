@@ -1485,29 +1485,29 @@ const Register = () => {
         },
       ],
     },
-    BeatTheDrop: {
-      formTitle: "Beat The Drop",
-      form: [
-        ...defaultForm,
-        "institute",
-        {
-          name: "team-name",
-          ele: textarea("Enter team name", "team-name", "Team name"),
-        },
-        {
-          name: "members",
-          ele: textarea(
-            "Enter all team members' names",
-            "members",
-            "Name of team members (N/A) if single participation"
-          ),
-        },
-        {
-          name: "amt",
-          ele: information("No registration fees required."),
-        },
-      ],
-    },
+    // BeatTheDrop: {
+    //   formTitle: "Beat The Drop",
+    //   form: [
+    //     ...defaultForm,
+    //     "institute",
+    //     {
+    //       name: "team-name",
+    //       ele: textarea("Enter team name", "team-name", "Team name"),
+    //     },
+    //     {
+    //       name: "members",
+    //       ele: textarea(
+    //         "Enter all team members' names",
+    //         "members",
+    //         "Name of team members (N/A) if single participation"
+    //       ),
+    //     },
+    //     {
+    //       name: "amt",
+    //       ele: information("No registration fees required."),
+    //     },
+    //   ],
+    // },
     Thrust: {
       formTitle: "Thrust",
       form: [
