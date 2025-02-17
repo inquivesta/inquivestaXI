@@ -29,7 +29,7 @@ const Team = () => {
 
     const webdev = [
         {name: "Sattwamo Ghosh", links: true, github:"sattwamo", insta: "__sattwamo__", pic: "sattwamo.jpg", mail: "sg21ms204@iiserkol.ac.in"},
-        {name: "Debayan Sarkar", pic: "deb.jpg", links:true, insta: "debayansarkar_", github: "nayabed", mail:"ds22ms002@iiserkol.ac.in"},
+        {name: "Debayan Sarkar", pic: "deb.jpg", links:true, insta: "debayansarkar_", github: "TheSillyCoder", mail:"ds22ms002@iiserkol.ac.in"},
     ];
   return (
     <>
